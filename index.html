@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MyMusic | Pero</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/36ca5abeae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>MyMusic</h1>
+        </div>
+        
+        <div class="menu">
+            <ul class="menu-list">
+                <li class="hideOnMobile"><a href="#banner">Home</a></li>
+                <li class="hideOnMobile"><a href="#discografy">Discografy</a></li>
+                <li class="hideOnMobile"><a href="#gallery">Gallery</a></li>
+                <li class="hideOnMobile"><a href="#videos">Videos</a></li>
+                <li class="hideOnMobile"><a href="#services">Services</a></li>
+                <li class="hideOnMobile"><a href="#upcoming">Upcoming Gigs</a></li>
+                <li class="hideOnMobile"><a href="#bio">Bio</a></li>
+                <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+                <li class="bars-menu-btn" onclick="showSidebar()"><svg xmlns="http://www.w3.org/2000/svg" background="white" height="24" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+            </ul>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()" class="close-sb-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#discografy">Discografy</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#services">Services</a></li>
+                <!--<li><a href="#upcoming">Upcoming</a></li>-->
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <section id="banner">
+        <div class="title">
+            <h1>PeRo</h1>
+            <p>Born in the vibrant cultural tapestry of Nigeria, Peter Fabian popularly known as Pero is a dynamic and soulful
+                 Afrobeat artist and songwriter, captivating audiences with a unique blend of rhythmic storytelling and 
+                 infectious melodies. The German based artist hailing from Imo State, Pero discovered a passion for music at
+                  an early age, inspired by the rich musical heritage of Nigeria. Growing up in this diverse environment
+                   laid the foundation for his eclectic musical style. As Pero continues to evolve as an artist, he is driven 
+                   by a commitment to push the boundaries 
+                of Afrobeat and contribute to the global appreciation of African music.</p>
+    </section>
+    <section id="discografy">
+        <h2 class="main-title">Discografy</h2>
+        <div class="play-list">
+            <h3 class="subtitle">Music List</h3>
+        </div>   
+        <div class="main-musicplayer">
+        <div class="tracks">
+          <!-- <form class="search" >
+                <input type="text" id="search" placeholder="Search Music">
+                <input type="submit" id="submit" value="Search">
+            </form>-->
+            <div class="music-list">
+            <div class="header">
+            <div class="row">
+                <span>MyMusic</span>
+            </div>
+             
+            </div>
+            <ul id="ul-tag">
+              <!-- here li list are coming from js -->
+            <div>
+                <ul id="root">
+
+                </ul>
+            </div>
+            </ul>
+            </div>
+        </div>
+        <div class="box-player">
+            <div class="wrapper">
+                 <div class="m-top-bar">
+                    
+                    <span>Now Playing</span>
+                   
+                </div>
+                <div class="music-bar">
+                    <div class="img-area">
+                        <img src="" alt="">
+                      </div>
+                      <div class="song-details">
+                        <p class="name"></p>
+                        <p class="artist"></p>
+                      </div>
+                      <div class="progress-area">
+                        <div class="progress-bar">
+                          <audio id="main-audio" src=""></audio>
+                        </div>
+                        <div class="song-timer">
+                          <span class="current-time">0:00</span>
+                          <span class="max-duration">0:00</span>
+                        </div>
+                      </div>
+                      <div class="controls">
+                         <!---<i id="repeat-plist" class="material-icons c1" title="repeat">repeat</i>-->
+                         <div class="c2">
+                            <i id="prev" class="material-icons ">skip_previous</i>
+                         </div>
+                        <div class="play-pause">
+                          <i class="material-icons play">play_arrow</i>
+                        </div>
+                        <div class="c2">
+                             <i id="next" class="material-icons">skip_next</i>
+                       </div>
+                       <!--- <i id="shuffle-music" class="material-icons c1" title="shuffle">shuffle</i>-->
+                      </div>
+
+                </div>
+          
+          
+            </div>
+        </div>
+        </div>
+        
+    </section>
+    <section id="gallery">
+        <h2 class="main-title">Gallery</h2>
+        <div class="coming-soon">
+            <h3 class="subtitle">My Photos...My Videos</h3>
+        </div>
+       <div class="main-gallery">
+            <div class="cover-gallery">
+                
+            </div>
+            <div class="gallery"> 
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img1.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img2.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img3.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img4.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img5.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img6.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img7.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img8.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img9.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img10.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img11.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img12.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img13.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img14.jpg" class="image">
+                </div>
+                <div class="gallery-image">
+                    <img src="/assets/gallery-img15.jpg" class="image">
+                </div>
+              
+
+            <div class="popup">
+                <div class="top-bar">
+                    <p class="image-name">
+                        img1.png
+                    </p>
+                    <span class="close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+                <div class="arrow-btn left-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div class="arrow-btn right-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <img src="" class="large-image">
+                <h1 class="index">01</h1>
+            </div>
+
+            
+            
+       </div>
+    </section>
+    <section id="videos">
+        <h2 class="main-title">Videos</h2>
+        
+        <h3 class="subtitle">My Official Videos</h3>
+        <div class="videos-container">
+            <div class="main-video">
+                <video src="/assets/PERO IF (VISUALIZER).mp4" controls></video>
+                <h3 class="video-title">If - Pero</h3>
+
+            </div>
+            <div class="video-list">
+                <div class="content">
+                <div class="vid active">
+                    <video src="/assets/PERO IF (VISUALIZER).mp4"></video>
+                    <h3 class="video-title">If - Pero</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video2 (2160p).mp4"></video>
+                    <h3 class="video-title">02</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video3 (2160p).mp4"></video>
+                    <h3 class="video-title">03</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video4 (2160p).mp4"></video>
+                    <h3 class="video-title">04</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video2 (2160p).mp4"></video>
+                    <h3 class="video-title">05</h3>
+                </div>
+
+            </div>
+            </div>    
+        </div>
+             
+    </section>
+    <section id="upcoming">
+
+        <h2 class="main-title">Upcoming</h2> 
+        <div class="coming-soon">
+            <h3 class="subtitle">Coming Soon</h3>
+        </div>
+        <div class="main-concert">
+            <div class="concert">
+                <img src="/assets/concert1.avif" alt="">
+                <h2>May. 1, 2024</h2>
+                <p>Berlin, Be</p>
+                <p>Urania</p>
+                <div class="concert-btn">
+                    <button>Remind Me</button>
+                    <button>Tickets</button>
+                </div>
+            </div>
+            <div class="concert">
+                <img src="/assets/concert2.avif" alt="">
+                <h2>May. 7, 2024</h2>
+                <p>Roma, RM</p>
+                <p>Olimpico</p>
+                <div class="concert-btn">
+                    <button>Remind Me</button>
+                    <button>Tickets</button>
+                </div>
+            </div>
+            <div class="concert">
+                <img src="/assets/concert3.avif" alt="">
+                <h2>May. 14, 2024</h2>
+                <p>Lisboa, LS</p>
+                <p>Vasco Da Gama</p>
+                <div class="concert-btn">
+                    <button>Remind Me</button>
+                    <button>Tickets</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        
+            <h2 class="main-title">Services</h2>
+        
+            <h3 class="subtitle">Contract Me</h3>
+        <div class="main-services">    
+        <div class="services-content">
+            <div class="contact-form">
+                <div class="form">
+                    <form action="mail.php" method="post">
+
+                         <h2>Booking Here</h2>
+                        <input class="form-label item" type="text" id="fname" name="name" required placeholder="Name"  autocomplete="off">
+                       <div class="item error-txt">Full Name can't be blank</div>
+
+                        <input class="form-label item"  type="email" id="email" name="email" required placeholder="Email"  autocomplete="off">
+                        <div class="item error-txt email">Email can't be blank</div>
+
+                        <input class="form-label item"  type="text" id="phone" name="phone" required placeholder="Phone"  autocomplete="off">
+                        <div class="item error-txt">Phone Number can't be blank</div>
+                        
+                        <input class="form-label item"  type="text" id="subject" name="subject" required placeholder="Subject"  autocomplete="off">
+                        <div class="item error-txt">Subject can't be blank</div>
+
+                        
+                        <textarea name="message item" id="message" cols="30" rows="30" required placeholder="Your Request..."></textarea>
+                        <div class="item error-txt">Message can't be blank</div>
+
+                        <input class="submit" type="submit" name="send" value="Submit" required>
+                    </form>
+                </div>
+            </div>
+            <div class="services">
+                <div class="service-box">
+                    <h2><i class="fa-solid fa-wine-glass"></i> Clubs & Bar</h2>
+                    <p class="info-txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                         Dolorum eum sint voluptas nisi perferendis enim nulla illo soluta repudiandae,
+                          aperiam earum error ad quos veritatis nihil maiores a temporibus sapiente.
+                    </p>
+                    
+                </div>
+                <div class="service-box">
+                    <h2><i class="fa-solid fa-heart"></i> Weddings</h2>
+                    <p class="info-txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                         Dolorum eum sint voluptas nisi perferendis enim nulla illo soluta repudiandae,
+                          aperiam earum error ad quos veritatis nihil maiores a temporibus sapiente.
+                    </p>
+                    
+                </div>
+                <div class="service-box">
+                    <h2><i class="fa-solid fa-champagne-glasses"></i> Corporate Events</h2>
+                    <p class="info-txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                         Dolorum eum sint voluptas nisi perferendis enim nulla illo soluta repudiandae,
+                          aperiam earum error ad quos veritatis nihil maiores a temporibus sapiente.
+                    </p>
+                    
+                </div>
+                <div class="service-box">
+                    <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Private Party</h2>
+                    <p class="info-txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                         Dolorum eum sint voluptas nisi perferendis enim nulla illo soluta repudiandae,
+                          aperiam earum error ad quos veritatis nihil maiores a temporibus sapiente.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+       
+        </div>
+
+
+
+        
+    </section>
+    <section id="bio">
+        <h2 class="main-title">Biography</h2>
+        <h3 class="subtitle">About Me</h3>
+        <div class="main-book">
+        <div class="book">
+            <input class="book-command" type="checkbox" id="c1">
+            <input class="book-command" type="checkbox" id="c2">
+            <input class="book-command" type="checkbox" id="c3">
+            <div id="cover">
+                <h2>Me, My Experience And Objectives</h2>
+            </div>
+            <div class="flip-book"> 
+                <div class="flip" id="p1">
+                    <div class="back">
+                        <img src="/assets/bio-path.jpeg" class="book-img">
+                        <label for="c1" class="back-btn">Back</label>
+                    </div>
+                    <div class="front">
+                        <h2>Who Am I</h2>
+                        <p class="bio-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, reiciendis est. Voluptatibus, modi. Adipisci temporibus nam dolore eos pariatur consectetur similique aspernatur sint voluptates nostrum! Quaerat debitis sapiente ullam impedit.lo Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis assumenda provident ratione, aut molestiae perferendis deleniti, possimus reprehenderit fuga amet voluptates officia atque, blanditiis nesciunt libero. Dolores neque laudantium libero.</p>
+                         <label for="c1" class="next-btn">Next</label>
+                    </div>
+                </div>
+                <div class="flip" id="p2">
+                    <div class="back">
+                        <img src="/assets/bio-mydream.jpeg" class="book-img">
+                        <label for="c2" class="back-btn">Back</label>
+                    </div>
+                    <div class="front">
+                        <h2>My Path</h2>
+                        <p class="bio-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, reiciendis est. Voluptatibus, modi. Adipisci temporibus nam dolore eos pariatur consectetur similique aspernatur sint voluptates nostrum! Quaerat debitis sapiente ullam impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi, maxime natus exercitationem aspernatur odit ipsa nesciunt quaerat temporibus inventore incidunt similique quis repellat explicabo vero cumque eaque eligendi sed!</p>
+                         <label for="c2" class="next-btn">Next</label>
+                    </div>
+                </div>
+                <div class="flip" id="p3">
+                    <div class="back">
+                        <img src="/assets/bio-aboutme.jpeg" class="book-img">
+                        <label for="c3" class="back-btn">Back</label>
+                    </div>
+                    <div class="front">
+                        <h2>My Aspiration</h2>
+                        <p class="bio-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, reiciendis est. Voluptatibus, modi. Adipisci temporibus nam dolore eos pariatur consectetur similique aspernatur sint voluptates nostrum! Quaerat debitis sapiente ullam impedit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia qui, alias beatae eius blanditiis necessitatibus rem illo enim a dolorem inventore ducimus error labore suscipit quis aliquam, commodi libero eveniet!</p>
+                         <label for="c3" class="next-btn">Next</label>
+                    </div>
+                
+                </div>
+                <div class="front end-page">
+                    <h2>My Gratitude</h2>
+                    <p class="bio-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eaque dignissimos reprehenderit magni quaerat architecto esse, ipsam neque, unde distinctio, libero dolores. Reprehenderit molestias deserunt velit delectus suscipit, facere animi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel provident harum veritatis vitae, beatae excepturi soluta eveniet veniam tenetur minima delectus dolores eum eius dignissimos aut sapiente et accusamus id.</p>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <h2 class="main-title">Contact</h2>
+        <h3 class="subtitle">Keep in Touch</h3>
+        <div class="main-footer">
+        <ul>
+            <li>
+                <h2>About</h2>
+                <div class="about">
+                    <span class="material-symbols-outlined"> location_on
+                        </span>
+                    <p>Fake St. 203 <br>Berlin, BE <br>100887 Deutschland</p>
+                </div>
+                <div class="about">
+                    <span class="material-symbols-outlined"> call
+                    </span>
+                    <a href="tel:+490123456789">+49 0123 456 789</a>
+                </div>
+                <div class="about">
+                    <span class="material-symbols-outlined"> mail
+                    </span>
+                    <a href="mailto:urboyperomusic@gmail.com?subject:interest20%on20%your20%services." target="_blank">urboyperomusic@gmail.com</a>
+                </div>
+            </li>
+           
+            <li class="f-li-social">
+                <div class="li-social-1">
+                     <h2>Social Media</h2>
+                <div class="about">
+                      <img class="icon" src="/assets/mycollection/png/001-facebook.png" alt="">
+                      <a href="#" target="_blank">Facebook</a>
+                </div>
+                <div class="about">
+                    <img class="icon" src="/assets/mycollection/png/002-tik-tok.png" alt="">
+                    <a href="#" target="_blank">Tik Tok</a>
+                </div>
+                <div class="about">
+                    <img class="icon" src="/assets/mycollection/png/003-instagram.png" alt="">
+                    <a href="https://www.instagram.com/_itspero/" target="_blank">Instagram</a>
+                </div>
+                </div>
+                <li class="social-2">
+                     <h2>Play My Music</h2>
+                <div class="about">
+                    <img class="icon" src="/assets/mycollection/png/004-spotify.png" alt="">
+                    <a href="https://open.spotify.com/intl-es/artist/64RuRUqcgY7BHXF27BSm57" target="_blank">Spotify</a>
+                </div>
+                <div class="about">
+                    <img class="icon" src="/assets/mycollection/png/005-play.png" alt="">
+                    <a href="https://www.youtube.com/channel/UC5daX5RHMMzbCp-sUvlupVQ" target="_blank">You Tube</a>
+                </div>
+                <div class="about">
+                    <img class="icon" src="/assets/mycollection/png/006-music.png" alt="">
+                    <a href="https://music.apple.com/us/artist/pero/1655449760" target="_blank">Apple Music</a>
+                </div>
+                </li>
+            <li>
+                <h2>Collaboration</h2>
+                <div class="about">
+                   <span class="material-symbols-outlined"> apartment
+                   </span>
+                   <p>This Place.Gmbh <br><a href="#">www.thisPlace.com</a></p> 
+                </div>
+                <div class="about">
+                    <span class="material-symbols-outlined">source_environment
+                        </span>
+                    <p>This Production.Gmbh <br><a href="#">www.thisPoduction.com</a></p> 
+                 </div>
+                 <div class="about">
+                    <span class="material-symbols-outlined">contacts_product
+                        </span>
+                    <p>This Person.Gmbh <br><a href="#">www.thisPerson.com</a></p> 
+                 </div>
+            </li>
+        </ul>
+
+        <hr>
+
+        <div class="copy-right">
+            <p>Copyright <span class="material-symbols-outlined">copyright</span>2024 All rights reserved</p>
+            <p>This template is made with <span class="material-symbols-outlined">favorite</span> by Stefi C.</p>
+        </div>
+
+        </div>
+    </footer>
+   
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/music-list.js"></script>
+    <script src="/script.js"></script>
+    
+
+    
+</body>
+</html>
