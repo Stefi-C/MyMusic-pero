@@ -19,7 +19,7 @@
     --image-shadow: 11px 11px 22px #a4a4a4, -11px -11px 22px #fff;
     --track-shadow: 7px 7px 14px #b8b8b8, -5px -5px 14px #fff;
 }
-*{
+*{ 
     margin: 0;
     padding: 0;
 }
