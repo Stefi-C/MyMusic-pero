@@ -134,7 +134,7 @@ nav{
 
 #banner{
     display: block;
-    height: 800px;
+    height: 94vh;
     background: linear-gradient(90deg, rgba(246,249,111,0.5) 0%, rgba(2, 14, 85, 0.526) 40%, rgba(198, 36, 144, 0.534) 100%),
     url(/assets/images1.jpeg);
     background-position: center;
@@ -168,11 +168,11 @@ nav{
     box-shadow: 5px 5px 15px 15px rgba(2,15,85,1);
     text-shadow: 2px 2px 0px #000, 5px 4px 0px rgba(0,0,0,0.15);
     color: #f466f2;
-background-image: -webkit-linear-gradient(0deg, #f6f96f 19%,  #f466f2 49%);
-background-clip: text;
--webkit-background-clip: text;
-text-fill-color: transparent;
--webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(0deg, #f6f96f 19%,  #f466f2 49%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    --text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 
 }
 .title p{
@@ -193,23 +193,24 @@ text-fill-color: transparent;
 
 
 #discografy{
-    padding: 30px;
+    padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
     color: var(--white);
     position: relative;
+    height: 100vh;
 }
 .main-title{
     font-family: var(--madimi);
     color: gray;
-    font-size: 45px;
+    font-size: 35px;
     position: relative;
     top: 30px;
 }
 
 .subtitle{
     font-family: var(--madimi);
-    font-size: 35px;
+    font-size: 25px;
     margin: 10px;
     padding: 10px;
 }
@@ -217,7 +218,8 @@ text-fill-color: transparent;
     font-family: var(--josefine);
     margin: 0 10px;
     padding: 10px;
-}/*
+}
+/*
  #search{
     width: 400px;
     color: var(--blue);
@@ -253,7 +255,7 @@ text-fill-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
+    height: 80vh;
     width: 100vw;
 }
 .box-player{
@@ -272,7 +274,7 @@ text-fill-color: transparent;
     justify-content: center;
     align-items: center;
     width: 315px;
-    height: 600px;
+    height: 550px;
     border-radius: 15px;
     border: 1px solid transparent;
     padding: 25px 30px;
@@ -665,18 +667,18 @@ text-fill-color: transparent;
 
 
 #gallery{
-    padding: 30px;
+    padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
     color: var(--white);
     justify-content: center;
     align-items: center;
-   
+    height: 100vh;
     
 }
 .main-gallery{
     box-shadow: -3px -3px 10px rgba(10, 24, 222, 0.503), 3px 3px 5px rgba(48, 8, 1, 0.945);
-    height: 70vh;
+    height: 55vh;
     padding: 80px;
     justify-content: center;
     border-radius: 5px;
@@ -687,12 +689,12 @@ text-fill-color: transparent;
  
 }
 .cover-gallery{
-    background: url(assets/gallery-banner.jpeg);
+    background: url(/gallery-bg.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 800px;
-    height: 550px;
+    width: 700px;
+    height: 450px;
     box-shadow: -3px -3px 10px rgba(47, 3, 3, 0.503), 3px 3px 5px rgba(18, 3, 0, 0.945);
     position: absolute;
     left: 10%;
@@ -827,7 +829,7 @@ text-fill-color: transparent;
 
 
 #upcoming{
-    padding: 30px;
+    padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
     color: var(--white);
@@ -837,6 +839,7 @@ text-fill-color: transparent;
     background-color: var(--white);border-radius: 10px;
     padding: 30px;
     box-shadow: inset 3px 3px 10px -2px #000000;
+    color: var(--blue);
 }
 .concert{
     width: 30%;
@@ -844,16 +847,19 @@ text-fill-color: transparent;
     margin: 30px;
     padding: 30px;
     border-radius: 5px;
-
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 .concert img{
-    width: 310px;
-    height: 310px;
+    width: 200px;
+    height: 200px;
     box-shadow: 3px 3px 10px -2px #000000;
 }
 .concert h2{
     color: var(--blue);
     font-family: var(--josefine);
+    margin: 10px;
 }
 .concert p{
     color: var(--blue);
@@ -861,7 +867,7 @@ text-fill-color: transparent;
 }
 .concert-btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .concert-btn button{
     outline: none;
@@ -882,15 +888,42 @@ text-fill-color: transparent;
     cursor: pointer;
 }
 
+.concert-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.concert-desc div{
+    display: flex;
+}
+.concert-desc h2{
+    font-family: var(--madimi);
+    text-align: start;
+}
+.concert-desc p{
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 70%;
+}
+.adresse{
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
 
 #videos{
-    padding: 30px;
+    padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
     color: var(--white);
+    height: 100vh;
 }
 
 .videos-container{
@@ -899,6 +932,7 @@ text-fill-color: transparent;
     gap: 15px;
     align-items: flex-start;
     padding: 5px 5%;
+    height: 70vh;
     
 }
 
@@ -906,26 +940,25 @@ text-fill-color: transparent;
     border-radius: 5px;
     background: linear-gradient(180deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.6) 99%);
     padding: 20px;
-    height: 530px;
+    height: 430px;
     box-shadow: -3px -3px 10px rgba(10, 24, 222, 0.503), 3px 3px 5px rgba(48, 8, 1, 0.945);
     box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
 }
 .main-video video{
-    height: 480px;
+    height: 410px;
     width: 800px;
     border-radius: 5px;
 }
 .video-title{
     color: var(--white);
     font-size: 23px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 5px 0 5px 0;
 }
 .vid-content{
     box-shadow: inset 26px -26px 52px #4f0e39,
     inset -26px 26px 52px #ff3ae5;
     overflow-y: scroll;
-    height: 500px;
+    height: 530px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -933,7 +966,7 @@ text-fill-color: transparent;
 }
 .video-list{
     overflow: scroll;
-    height: 530px;
+    height: 430px;
     padding: 20px;
     background: transparent;
     box-shadow: -3px -3px 15px rgba(250, 110, 247, 0.418), 3px 3px 5px rgba(48, 8, 1, 0.945);
@@ -988,7 +1021,7 @@ video:focus{
 
 
 #services{
-    padding: 30px;
+    padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
     color: var(--white);
@@ -996,6 +1029,7 @@ video:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 .main-services{
     position: relative;
@@ -1005,7 +1039,7 @@ video:focus{
     align-items: center;
     background: transparent;
     margin: 50px;
-    height: 100vh;
+    height: 450px;
     width: 100%;
     box-shadow: -3px -3px 15px rgba(250, 110, 247, 0.418), 3px 3px 5px rgba(48, 8, 1, 0.945);
     box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
@@ -1039,18 +1073,19 @@ video:focus{
 }
 .services-content{
     display: flex;
-    padding: 100px 20px;
-    margin: 20px;
+    padding: 10px 20px;
+    margin: 10px;
     width: 80%;
 }
 .contact-form{
     width: 500px;
-    height: 500px;
+    height: 410px;
     background-color: transparent;
     border-radius: 10px;
     border-radius: 10px 0 0 10px;
 }
 .form{
+    height: 95%;
     color: var(--clear);
     margin: 10px;
     border:transparent;
@@ -1071,7 +1106,7 @@ form{
     
 }
 form h2{
-    font-size: 30px;
+    font-size: 20px;
     text-shadow: 3px 3px 4px rgb(9, 9, 9);
 }
 .form-label{
@@ -1090,10 +1125,10 @@ form h2{
     color: var(--white);
 }
 .submit{
-    height: 41px;
+    height: 35px;
     width: 100px;
     border: none;
-    background: transparent;
+    background:rgba(250, 110, 247, 0.418);
     box-shadow: -3px -3px 15px rgba(250, 110, 247, 0.418), 3px 3px 5px rgba(48, 8, 1, 0.945);
     box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
     color: var(--clear);
@@ -1111,7 +1146,7 @@ form h2{
 }
 textarea{
     width: 100%;
-    height: 175px;
+    height: 75px;
     background-color:#020e5595;
     box-shadow: inset 5px 5px 19px #2d2561,
               inset -5px -5px 19px #0d0915;
@@ -1130,7 +1165,7 @@ textarea .error-txt{
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: repeat(2, 310px);
-    grid-template-rows: repeat(2, 270px);
+    grid-template-rows: repeat(2, 200px);
     grid-column-gap: 20px;
     grid-row-gap: 0px;
     border-radius: 0px 10px 10px 0px;
@@ -1148,13 +1183,13 @@ textarea .error-txt{
 }
 
 .service-box h2{
-   padding: 10px;
-   font-size: 28px;
+   padding: 5px;
+   font-size: 20px;
    text-shadow: var(--text-shadow);
 }
 .service-box p{
-    padding: 10px;
-    font-size: 18px;
+    padding: 15px;
+    font-size: 16px;
     text-align: justify;
     text-shadow: var(--text-shadow);
 }
@@ -1184,7 +1219,7 @@ input:active{
 
 
 #bio{
-    padding: 30px;
+    padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
     color: var(--white);  
@@ -3067,6 +3102,41 @@ font-size: 12px;
     .cover-gallery{
         display: none;
     }
+   
+    .main-video{
+        width: 480px;
+    }
+    .main-video video{
+        width: 470px;
+    }
+    .video-list{
+        width: 470px;
+        height: 300px;  
+    }
+    .vid{
+        height: 30px;
+    }
+    .vid video{
+        width: 60px;
+    }
+    .main-concert{
+        flex-direction: column;
+    }
+    .concert{
+        display: flex;
+        width: 80%;
+        align-items: center;
+    }
+    .concert img{
+        width: 70px;
+        height: 70px;
+        margin-right: 5px;
+    }
+    .concert-btn button{
+        width: 70px;
+        height: 50px;
+    }
+
     .main-services{
         height: auto;
     }
