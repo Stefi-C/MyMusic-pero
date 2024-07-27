@@ -26,7 +26,7 @@ const wrapper = document.querySelector(".wrapper"),
 let musicIndex = Math.floor((Math.random() * listMusic.length) + 1),
     isMusicPaused = true;
 
-const ulTag = document.querySelector("#ul-tag"); // Spostato qui per evitare l'errore di riferimento
+const ulTag = document.querySelector("#ul-tag");
 
 window.addEventListener("load", () => {
     loadMusic(musicIndex);
@@ -198,6 +198,11 @@ for (let i = 0; i < listMusic.length; i++) {
         liAudioDurationTag.innerText = `${totalMin}:${totalSec}`;
         liAudioDurationTag.setAttribute("t-duration", `${totalMin}:${totalSec}`);
     });
+
+    let liElement = ulTag.querySelector(`li[li-index="${i + 1}"]`);
+    liElement.addEventListener("click", function() {
+        clicked(this);
+    });
 }
 
 function playingSong() {
@@ -213,7 +218,6 @@ function playingSong() {
             allLiTag[j].classList.add("playing");
             audioTag.innerText = "Playing";
         }
-        allLiTag[j].setAttribute("onclick", "clicked(this)");
     }
 }
 

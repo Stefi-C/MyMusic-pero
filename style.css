@@ -2965,6 +2965,7 @@ font-size: 12px;
 
 /* Extra small devices (phones, 768 px and down) */
 @media only screen and (max-width: 768px) {
+    
     #banner{
         height: 100vh;
         position: relative;
@@ -2992,9 +2993,11 @@ font-size: 12px;
     .main-musicplayer{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .tracks{
-        width: 90%;
+        width: 480px;
         padding: 10px;
         display: flex;
         flex-direction: column;
@@ -3008,6 +3011,7 @@ font-size: 12px;
         font-size: 25px;
     }
     .music-list{
+        margin-top: -150px;
         background: var(--white);
         justify-content: space-between;
         align-items: center;
@@ -3018,21 +3022,39 @@ font-size: 12px;
         background: transparent;
         left: 0;
         background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
-    ,url(/assets/mplayerbg.jpeg);
-    background-position: top;
-    background-size: cover;
+        ,url(/assets/mplayerbg.jpeg);
+        background-position: top;
+        background-size: cover;
         box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
-        height: 400px;
+        height: 380px;
+        overflow: hidden
+    }
+    .music-list ul {
         overflow: scroll;
     }
-    .music-list li{
+    .music-list ul li{
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 40px;
     
     }
+    .music-list ul li img{
+        width: 40px;
+        height: 40px;
+    }
+    .row{
+        text-align: center;
+        font-size: 18px;
+        color: #222;text-shadow: none;
+    }
+    .box-player{
+        width: 550px;
+        margin-top: -150px;
+    }
     .wrapper{
-        width: 65%;
+        width: 400px;
+        height: 100px;
         background: linear-gradient(180deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,1) 99%), url(/assets/tracksbg.jpeg);
         background-position: top;
         background-size: cover;
