@@ -2965,11 +2965,33 @@ font-size: 12px;
 
 /* Extra small devices (phones, 768 px and down) */
 @media only screen and (max-width: 768px) {
+    #banner{
+        height: 100vh;
+        position: relative;
+    }
+    #banner .title{
+        display: flex;
+        flex-direction: column-reverse;
+        position: absolute;
+        height: 580px;
+        top: 5%;
+        left: 20%;
+    }
+    #banner .title h1{
+        font-size: 100px;
+        bottom: 0;
+     
+
+    }
     #banner .title p{
         margin-top: 100px;
         font-size: 15px;
-        height: 345px;
-        overflow-x: scroll;
+        height: 330px;
+        width: 300px;
+    }
+    .main-musicplayer{
+        display: flex;
+        flex-direction: column;
     }
     .tracks{
         width: 90%;
@@ -2979,21 +3001,28 @@ font-size: 12px;
         justify-content: center;
         align-items: center;
     }
+    .main-title{
+        font-size: 30px;
+    }
+    .subtitle{
+        font-size: 25px;
+    }
     .music-list{
         background: var(--white);
         justify-content: space-between;
         align-items: center;
-        width: 90%;
+        width: 100%;
         border-radius: 15px;
         border: 1px solid transparent;
         padding: 0px 30px;
         background: transparent;
+        left: 0;
         background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
     ,url(/assets/mplayerbg.jpeg);
     background-position: top;
     background-size: cover;
         box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
-        height: 600px;
+        height: 400px;
         overflow: scroll;
     }
     .music-list li{

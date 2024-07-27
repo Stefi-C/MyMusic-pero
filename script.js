@@ -1,4 +1,5 @@
-//-------------------------------navbarbutton----
+document.addEventListener("DOMContentLoaded", ()=>{
+    //-------------------------------navbarbutton----
 const sidebar = document.querySelector('.sidebar');
 
 function showSidebar(){
@@ -25,6 +26,8 @@ const wrapper = document.querySelector(".wrapper"),
 let musicIndex = Math.floor((Math.random() * listMusic.length) + 1),
     isMusicPaused = true;
 
+const ulTag = document.querySelector("#ul-tag"); // Spostato qui per evitare l'errore di riferimento
+
 window.addEventListener("load", () => {
     loadMusic(musicIndex);
     playingSong();
@@ -37,7 +40,6 @@ function loadMusic(indexNumb) {
     mainAudio.src = `/songs/${listMusic[indexNumb - 1].src}.mp3`;
 }
 
-//play music function
 function playMusic() {
     wrapper.classList.add("paused");
     playPauseBtn.querySelector("i").innerText = "pause";
@@ -45,7 +47,6 @@ function playMusic() {
     musicImg.classList.add('rotate');
 }
 
-//pause music function
 function pauseMusic() {
     wrapper.classList.remove("paused");
     playPauseBtn.querySelector("i").innerText = "play_arrow";
@@ -53,80 +54,67 @@ function pauseMusic() {
     musicImg.classList.remove('rotate');
 }
 
-//prev music function
 function prevMusic() {
-    musicIndex--; 
-    if (musicIndex < 1) musicIndex = listMusic.length; 
+    musicIndex--;
+    musicIndex < 1 ? musicIndex = listMusic.length : musicIndex = musicIndex;
     loadMusic(musicIndex);
     playMusic();
     playingSong();
 }
 
-//next music function
 function nextMusic() {
     musicIndex++;
-    if (musicIndex > listMusic.length) musicIndex = 1; 
+    musicIndex > listMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
     loadMusic(musicIndex);
     playMusic();
     playingSong();
 }
 
-// play or pause button event
 playPauseBtn.addEventListener("click", () => {
     const isMusicPlay = wrapper.classList.contains("paused");
     isMusicPlay ? pauseMusic() : playMusic();
     playingSong();
 });
 
-//prev music button event
 prevBtn.addEventListener("click", () => {
     prevMusic();
 });
 
-//next music button event
 nextBtn.addEventListener("click", () => {
     nextMusic();
 });
 
-// update progress bar width according to music current time
 mainAudio.addEventListener("timeupdate", (e) => {
     const currentTime = e.target.currentTime,
-        duration = e.target.duration,
-        progressWidth = (currentTime / duration) * 100;
-
+        duration = e.target.duration;
+    let progressWidth = (currentTime / duration) * 100;
     progressBar.style.width = `${progressWidth}%`;
 
     let musicCurrentTime = wrapper.querySelector(".current-time"),
         musicDuration = wrapper.querySelector(".max-duration");
 
-    mainAudio.addEventListener("loadeddata", () => {
-        let mainAdDuration = mainAudio.duration,
-            totalMin = Math.floor(mainAdDuration / 60),
-            totalSec = Math.floor(mainAdDuration % 60);
-
+    if (duration) {
+        let totalMin = Math.floor(duration / 60),
+            totalSec = Math.floor(duration % 60);
         if (totalSec < 10) totalSec = `0${totalSec}`;
         musicDuration.innerText = `${totalMin}:${totalSec}`;
-    });
+    }
 
     let currentMin = Math.floor(currentTime / 60),
         currentSec = Math.floor(currentTime % 60);
-
     if (currentSec < 10) currentSec = `0${currentSec}`;
     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 });
 
-// update playing song currentTime according to the progress bar width
 progressArea.addEventListener("click", (e) => {
     let progressWidth = progressArea.clientWidth,
         clickedOffsetX = e.offsetX,
         songDuration = mainAudio.duration;
-
     mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
     playMusic();
     playingSong();
 });
 
-//repeat and shuffle
 const repeatButton = document.getElementById('repeat-plist'),
     shuffleButton = document.getElementById('shuffle-music');
 
@@ -142,20 +130,15 @@ repeatButton.addEventListener("click", () => {
     }
 });
 
-function randomFile() {
-    return listMusic[Math.floor(Math.random() * listMusic.length)];
-}
-
-let newSong = new Audio(randomFile().src);
-
 shuffleButton.addEventListener("click", () => {
     if (shuffleButton.innerText === 'shuffle') {
         shuffleButton.innerText = 'shuffle_on';
         shuffleButton.setAttribute("title", "Shuffle On");
-        playMusic();
+        shuffle(listMusic);
     } else if (shuffleButton.innerText === 'shuffle_on') {
         shuffleButton.innerText = 'shuffle';
         shuffleButton.setAttribute("title", "Shuffle Off");
+        listMusic.sort();  // Assuming you want to disable shuffle by resetting to original order
     }
 });
 
@@ -163,7 +146,6 @@ function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
 
-//code for what to do after song ended
 mainAudio.addEventListener("ended", () => {
     let getText = repeatButton.innerText;
     switch (getText) {
@@ -184,12 +166,9 @@ mainAudio.addEventListener("ended", () => {
             loadMusic(musicIndex);
             playMusic();
             playingSong();
-            shuffle(listMusic);
             break;
     }
 });
-
-const ulTag = document.querySelector("#ul-tag");
 
 for (let i = 0; i < listMusic.length; i++) {
     let liTag = `<li li-index="${i + 1}">
@@ -200,21 +179,21 @@ for (let i = 0; i < listMusic.length; i++) {
                     </div>
                     <span id="${listMusic[i].src}" class="audio-duration">3:40</span>
                     <audio class="${listMusic[i].src}" src="songs/${listMusic[i].src}.mp3"></audio>
-                  </li>
-                  <div class="download-btn">
-                  <a href="songs/${listMusic[i].src}.mp3" download="${listMusic[i].name}"><i class="fa-solid fa-download"></i></a>
-                  </div>`;
+                 </li>
+                 <div class="download-btn">
+                    <a href="songs/${listMusic[i].src}.mp3" download="${listMusic[i].name}">
+                      <i class="fa-solid fa-download"></i>
+                    </a>
+                 </div>`;
 
     ulTag.insertAdjacentHTML("beforeend", liTag);
 
     let liAudioDurationTag = ulTag.querySelector(`#${listMusic[i].src}`),
         liAudioTag = ulTag.querySelector(`.${listMusic[i].src}`);
-
     liAudioTag.addEventListener("loadeddata", () => {
         let duration = liAudioTag.duration,
             totalMin = Math.floor(duration / 60),
             totalSec = Math.floor(duration % 60);
-
         if (totalSec < 10) totalSec = `0${totalSec}`;
         liAudioDurationTag.innerText = `${totalMin}:${totalSec}`;
         liAudioDurationTag.setAttribute("t-duration", `${totalMin}:${totalSec}`);
@@ -223,21 +202,17 @@ for (let i = 0; i < listMusic.length; i++) {
 
 function playingSong() {
     const allLiTag = ulTag.querySelectorAll("li");
-
     for (let j = 0; j < allLiTag.length; j++) {
         let audioTag = allLiTag[j].querySelector(".audio-duration");
-
         if (allLiTag[j].classList.contains("playing")) {
             allLiTag[j].classList.remove("playing");
             let adDuration = audioTag.getAttribute("t-duration");
             audioTag.innerText = adDuration;
         }
-
         if (allLiTag[j].getAttribute("li-index") == musicIndex) {
             allLiTag[j].classList.add("playing");
             audioTag.innerText = "Playing";
         }
-
         allLiTag[j].setAttribute("onclick", "clicked(this)");
     }
 }
@@ -249,7 +224,6 @@ function clicked(element) {
     playMusic();
     playingSong();
 }
-
 /*--------------------------------video*/
 
 var videoPlayer = document.getElementById("videoPlayer"),
@@ -278,3 +252,4 @@ listVideo.forEach(video => {
         }
       };
     });
+})
