@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/36ca5abeae.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    </script><script src="https://kit.fontawesome.com/36ca5abeae.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
@@ -18,30 +20,20 @@
         </div>
         
         <div class="menu">
-            <ul class="menu-list">
+            <ul id="menu-list" class="menu-list">
                 <li class="hideOnMobile"><a href="#banner">Home</a></li>
                 <li class="hideOnMobile"><a href="#discografy">Discografy</a></li>
-                <li class="hideOnMobile"><a href="#gallery">Gallery</a></li>
-                <li class="hideOnMobile"><a href="#videos">Videos</a></li>
                 <li class="hideOnMobile"><a href="#upcoming">Upcoming Gigs</a></li>
+                <li class="hideOnMobile"><a href="#videos">Videos</a></li>
+                <li class="hideOnMobile"><a href="#gallery">Gallery</a></li>
                 <li class="hideOnMobile"><a href="#bio">Bio</a></li>
                 <li class="hideOnMobile"><a href="#services">Services</a></li>
                 <li class="hideOnMobile"><a href="#contact">Contact</a></li>
-                <li class="bars-menu-btn" onclick="showSidebar()"><svg xmlns="http://www.w3.org/2000/svg" background="white" height="24" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
             </ul>
-            <ul class="sidebar">
-                <li onclick="hideSidebar()" class="close-sb-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
-                <li><a href="#banner">Home</a></li>
-                <li><a href="#discografy">Discografy</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#services">Services</a></li>
-                <!--<li><a href="#upcoming">Upcoming</a></li>-->
-                <li><a href="#bio">Bio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                
-            </ul>
+           
         </div>
+        <i id="menu-toggle" class="fa-solid fa-bars"></i>
+
     </nav>
     <section id="banner">
         <div class="title">
@@ -94,7 +86,7 @@
                 <div class="music-bar">
                     <div class="img-area">
                         <img src="" alt="">
-                      </div>
+                    </div>
                       <div class="song-details">
                         <p class="name"></p>
                         <p class="artist"></p>
@@ -129,6 +121,76 @@
         </div>
         </div>
         
+    </section>
+    <section id="upcoming">
+
+        <h2 class="main-title">Upcoming</h2> 
+        <div class="coming-soon">
+            <h3 class="subtitle">Coming Soon</h3>
+        </div>
+        <div class="main-concert">
+            <div class="concert">
+                <img src="/assets/concert1.avif" alt="">
+                <div>
+                    <h2>May. 1, 2024</h2>
+                    <p>Berlin, Be</p>
+                    <p>Urania</p>
+                    <div class="concert-btn">
+                        <button>Tickets</button>
+                    </div>
+                </div>
+            </div>
+            <div class="concert-desc">
+                <h2>Title of Event</h2>
+                <div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias dicta aliquam voluptatem illum deserunt! Quidem dolore eaque ipsa voluptatibus? Quas veniam, eaque odit culpa quis accusantium neque! Alias facere dolore repellat, illo magnam obcaecati quia sed earum, ea sunt, maxime a aliquid unde explicabo tempore iusto enim perspiciatis nobis. Dolorum sed possimus similique quis atque nisi saepe aperiam sequi corrupti, culpa, natus, fugiat dicta repellendus? Maiores ut dolores, eum dolore delectus vero culpa laboriosam sint et natus porro. Aut dolores quos quo quas praesentium officia doloremque, cum ex. Dolor reiciendis earum, impedit officia nisi recusandae accusantium voluptas sunt? Consequatur, necessitatibus.</p>
+                    
+                    <div class="adresse">
+                        <p>Someadressestraße 1 <br> 10020, Berlin</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.7307976489587!2d13.410182376416643!3d52.53830467206597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851fe43ea2181%3A0x6e5dbe94b8ac0bff!2sSch%C3%B6nhauser%20Allee%2036%2C%2010435%20Berlin!5e0!3m2!1ses!2sde!4v1722093374970!5m2!1ses!2sde" width="150" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="videos">
+        <h2 class="main-title">Videos</h2>
+        
+        <h3 class="subtitle">My Official Videos</h3>
+        <div class="videos-container">
+            <div class="main-video">
+                <video src="/assets/PERO IF (VISUALIZER).mp4" controls></video>
+                <h3 class="video-title">If - Pero</h3>
+
+            </div>
+            <div class="video-list">
+                <div class="content">
+                <div class="vid active">
+                    <video src="/assets/PERO IF (VISUALIZER).mp4"></video>
+                    <h3 class="video-title">If - Pero</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video2 (2160p).mp4"></video>
+                    <h3 class="video-title">02</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video3 (2160p).mp4"></video>
+                    <h3 class="video-title">03</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video4 (2160p).mp4"></video>
+                    <h3 class="video-title">04</h3>
+                </div>
+                <div class="vid">
+                    <video src="/assets/video2 (2160p).mp4"></video>
+                    <h3 class="video-title">05</h3>
+                </div>
+
+            </div>
+            </div>    
+        </div>
+             
     </section>
     <section id="gallery">
         <h2 class="main-title">Gallery</h2>
@@ -209,76 +271,6 @@
             </div>
             
        </div>
-    </section>
-    <section id="videos">
-        <h2 class="main-title">Videos</h2>
-        
-        <h3 class="subtitle">My Official Videos</h3>
-        <div class="videos-container">
-            <div class="main-video">
-                <video src="/assets/PERO IF (VISUALIZER).mp4" controls></video>
-                <h3 class="video-title">If - Pero</h3>
-
-            </div>
-            <div class="video-list">
-                <div class="content">
-                <div class="vid active">
-                    <video src="/assets/PERO IF (VISUALIZER).mp4"></video>
-                    <h3 class="video-title">If - Pero</h3>
-                </div>
-                <div class="vid">
-                    <video src="/assets/video2 (2160p).mp4"></video>
-                    <h3 class="video-title">02</h3>
-                </div>
-                <div class="vid">
-                    <video src="/assets/video3 (2160p).mp4"></video>
-                    <h3 class="video-title">03</h3>
-                </div>
-                <div class="vid">
-                    <video src="/assets/video4 (2160p).mp4"></video>
-                    <h3 class="video-title">04</h3>
-                </div>
-                <div class="vid">
-                    <video src="/assets/video2 (2160p).mp4"></video>
-                    <h3 class="video-title">05</h3>
-                </div>
-
-            </div>
-            </div>    
-        </div>
-             
-    </section>
-    <section id="upcoming">
-
-        <h2 class="main-title">Upcoming</h2> 
-        <div class="coming-soon">
-            <h3 class="subtitle">Coming Soon</h3>
-        </div>
-        <div class="main-concert">
-            <div class="concert">
-                <img src="/assets/concert1.avif" alt="">
-                <div>
-                    <h2>May. 1, 2024</h2>
-                    <p>Berlin, Be</p>
-                    <p>Urania</p>
-                    <div class="concert-btn">
-                        <button>Tickets</button>
-                    </div>
-                </div>
-            </div>
-            <div class="concert-desc">
-                <h2>Title of Event</h2>
-                <div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias dicta aliquam voluptatem illum deserunt! Quidem dolore eaque ipsa voluptatibus? Quas veniam, eaque odit culpa quis accusantium neque! Alias facere dolore repellat, illo magnam obcaecati quia sed earum, ea sunt, maxime a aliquid unde explicabo tempore iusto enim perspiciatis nobis. Dolorum sed possimus similique quis atque nisi saepe aperiam sequi corrupti, culpa, natus, fugiat dicta repellendus? Maiores ut dolores, eum dolore delectus vero culpa laboriosam sint et natus porro. Aut dolores quos quo quas praesentium officia doloremque, cum ex. Dolor reiciendis earum, impedit officia nisi recusandae accusantium voluptas sunt? Consequatur, necessitatibus.</p>
-                    
-                    <div class="adresse">
-                        <p>Someadressestraße 1 <br> 10020, Berlin</p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.7307976489587!2d13.410182376416643!3d52.53830467206597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851fe43ea2181%3A0x6e5dbe94b8ac0bff!2sSch%C3%B6nhauser%20Allee%2036%2C%2010435%20Berlin!5e0!3m2!1ses!2sde!4v1722093374970!5m2!1ses!2sde" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <section id="bio">
         <h2 class="main-title">Biography</h2>

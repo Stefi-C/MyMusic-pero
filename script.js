@@ -1,14 +1,21 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     //-------------------------------navbarbutton----
-const sidebar = document.querySelector('.sidebar');
 
-function showSidebar(){
-    sidebar.style.display = 'flex';
-}
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menuList = document.getElementById('menu-list');
+    var menuToggle = document.getElementById('menu-toggle');
 
-function hideSidebar(){
-    sidebar.style.display = 'none';
-}
+    if (menuList.style.right === '0px') {
+      menuList.style.right = '-400px';
+      menuToggle.classList.remove('fa-times');
+      menuToggle.classList.add('fa-bars');
+    } else {
+      menuList.style.right = '0px';
+      menuToggle.classList.remove('fa-bars');
+      menuToggle.classList.add('fa-times');
+    }
+  });
+
 
 //---------------------------------------------------------------musicPlayer
 const wrapper = document.querySelector(".wrapper"),
@@ -257,3 +264,157 @@ listVideo.forEach(video => {
       };
     });
 })
+
+
+
+      /*--------------------------------gallery*/
+
+    
+       
+      const images = [...document.querySelectorAll('.image')];
+
+      const popup = document.querySelector('.popup');
+      const closeBtn = document.querySelector('.close-btn');
+      const imageName = document.querySelector('.image-name');
+      const largeImage = document.querySelector('.large-image');
+      const imageIndex = document.querySelector('.index');
+      const leftArrow = document.querySelector('.left-arrow');
+      const rightArrow = document.querySelector('.right-arrow');
+
+
+      let index = 0;
+
+      images.forEach((item, i) =>{
+        item.addEventListener('click', ()=>{
+            popup.classList.toggle('active');
+            updateImage(i);
+           
+        })
+      })
+      const updateImage = (i) => {
+        let path = `assets/gallery-img${i+1}.jpg`;
+        largeImage.src = path;
+        imageName.innerHTML = path;
+        imageIndex.innerHTML = `0${i+1}`;
+        index = i;
+      }
+      closeBtn.addEventListener("click", ()=>{
+        popup.classList.toggle('active');
+      })
+      leftArrow.addEventListener("click", ()=>{
+        if(index > 0){
+            updateImage(index - 1);
+        }
+        if(index === 0){
+            index = images.length;
+        }
+      })
+      rightArrow.addEventListener("click", ()=>{
+        if(index < images.length - 1){
+            updateImage(index + 1);
+        }
+        if(index === images.length){
+            index = 0;
+        }
+      })
+     
+      //-----------------contact form
+      const form = document.querySelector('form');
+      const fullName = document.getElementById('fname');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const subject = document.getElementById('subject');
+      const mess = document.getElementById('message');
+
+      function sendEmail() {
+          const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${mess.value}`;
+          
+          Email.send({
+              Host: "smtp.elasticemail.com",
+              Username: "urboyperomusic@gmail.com",
+              Password: "BE9B5A1F036F5B6217323DE15763538CD6A8",
+              To: 'urboyperomusic@gmail.com',
+              From: "urboyperomusic@gmail.com",
+              Subject: subject.value,
+              Body: bodyMessage
+          }).then(
+              message => {
+                  if (message == 'OK') {
+                      Swal.fire({
+                          title: "Success",
+                          text: "Message sent successfully!",
+                          icon: "success"
+                      });
+                  } else {
+                      Swal.fire({
+                          title: "Error",
+                          text: "Message not sent. Please try again.",
+                          icon: "error"
+                      });
+                  }
+              }
+          ).catch(
+              error => {
+                  Swal.fire({
+                      title: "Error",
+                      text: "Message not sent. Please try again.",
+                      icon: "error"
+                  });
+              }
+          );
+      }
+      
+      function checkInputs() {
+          const items = document.querySelectorAll('.item');
+          for (const item of items) {
+              if (item.value == "") {
+                  item.classList.add('error');
+                  item.parentElement.classList.add('error');
+              } else {
+                  item.classList.remove('error');
+                  item.parentElement.classList.remove('error');
+              }
+              if (item === email) {
+                  checkEmail();
+              }
+          }
+      }
+
+      function checkEmail() {
+          const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+          const errorTxtEmail = document.querySelector(".error-txt.email");
+
+          if (!email.value.match(emailRegex)) {
+              email.classList.add("error");
+              email.parentElement.classList.add("error");
+
+              if (email.value != "") {
+                  errorTxtEmail.innerText = "Enter a valid email address";
+              } else {
+                  errorTxtEmail.innerText = "Email Address can't be blank";
+              }
+          } else {
+              email.classList.remove("error");
+              email.parentElement.classList.remove("error");
+              errorTxtEmail.innerText = "";
+          }
+      }
+
+      form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          checkInputs();
+
+          if (!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !subject.classList.contains("error") && !mess.classList.contains("error")) {
+              sendEmail();
+              form.reset();
+          }
+      });
+       //----------------contact button
+       const contactInfoBtn = document.querySelectorAll('#info-btn');
+       const serviceBox = document.querySelectorAll('.service-box');
+       const serviceInfoText = document.querySelectorAll('.service-box p');
+       
+       function openInfo(){
+         serviceBox.classList.add('active');//da correggere
+         serviceInfoText.classList.add('active');//da correggere
+       };
