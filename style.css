@@ -110,7 +110,7 @@ nav{
     display: block;
     height: 94vh;
     background: linear-gradient(90deg, rgba(246,249,111,0.5) 0%, rgba(2, 14, 85, 0.526) 40%, rgba(198, 36, 144, 0.534) 100%),
-    url(/assets/images1.jpeg);
+    url(./images1.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -257,7 +257,7 @@ nav{
     padding: 25px 30px;
     margin: 20px;
     background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
-    ,url(/assets/mplayerbg.jpeg) no-repeat;
+    ,url(./mplayerbg.jpeg) no-repeat;
     background-position: center;
     background-size: contain;
     box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
@@ -505,7 +505,7 @@ nav{
     border: 1px solid transparent;
     padding: 25px 30px;
     background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
-    ,url(/assets/tracksbg.jpeg);
+    ,url(./tracksbg.jpeg);
     background-position: center;
     background-size: cover;
     box-shadow: inset -3px -3px 7px rgb(232, 125, 246), 3px 3px 5px rgba(48, 8, 1, 0.945);
@@ -813,7 +813,7 @@ nav{
 }
 .main-concert{
     display: flex;
-    background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(/assets/upcoming-bg.jpeg) no-repeat;
+    background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(./upcoming-bg.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -893,6 +893,7 @@ nav{
     width: 400px;
     justify-content: center;
     align-items: center;
+    box-shadow: var(--image-shadow);
 }
 
 
@@ -1205,7 +1206,7 @@ input:active{
     color: var(--white);  
 }
 .main-book{
-    background: url(/assets/bio-left-img.jpeg);
+    background: url(./bio-left-img.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1281,7 +1282,7 @@ input:active{
     top: 0;
     left: 0;
     border-radius: 5px;
-    background:radial-gradient(circle, rgba(255,255,255,0.5787037037037037) 2%, rgba(164,164,164,1) 100%), url('/assets/bio-page.jpeg');
+    background:radial-gradient(circle, rgba(255,255,255,0.5787037037037037) 2%, rgba(164,164,164,1) 100%), url('./bio-page.jpeg');
     box-sizing: border-box;
     padding: 0 13px;
     box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5) 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -1368,7 +1369,7 @@ input:active{
 
 footer{
     margin: 0;
-    background: linear-gradient(90deg, rgba(247, 249, 111, 0.542)0%, rgba(2, 14, 85, 0.481) 40%, rgba(198, 36, 144, 0.524) 100%), url(/assets/footer-bg.jpg);
+    background: linear-gradient(90deg, rgba(247, 249, 111, 0.542)0%, rgba(2, 14, 85, 0.481) 40%, rgba(198, 36, 144, 0.524) 100%), url(./footer-bg.jpg);
     text-align: center;
     background-size: cover;
     background-position: center;
@@ -1623,7 +1624,7 @@ footer{
     }
     .wrapper{
         background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
-        ,url(/assets/tracksbg.jpeg) no-repeat;
+        ,url(./tracksbg.jpeg) no-repeat;
         background-position: top;
         background-size: cover;
         height:105px;
@@ -1805,7 +1806,7 @@ footer{
   }
     .main-book{display: none;}
     .main-about{display: block;
-        background: linear-gradient(90deg, rgba(247, 249, 111, 0.35)0%, rgba(2, 14, 85, 0.53) 40%, rgba(198, 36, 144, 0.569)100%), url(/assets/bio-left-img.jpeg) no-repeat center;
+        background: linear-gradient(90deg, rgba(247, 249, 111, 0.35)0%, rgba(2, 14, 85, 0.53) 40%, rgba(198, 36, 144, 0.569)100%), url(./bio-left-img.jpeg) no-repeat center;
         background-size: cover;
         padding: 10px;
         margin-top: 15px;
@@ -1832,7 +1833,7 @@ footer{
         width: 95%;
     }
     .adresse{
-        box-shadow: var(--image-shadow);
+      
         width: 70%;
         
     }

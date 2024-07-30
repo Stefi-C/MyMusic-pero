@@ -43,8 +43,8 @@ window.addEventListener("load", () => {
 function loadMusic(indexNumb) {
     musicName.innerText = listMusic[indexNumb - 1].name;
     musicArtist.innerText = listMusic[indexNumb - 1].artist;
-    musicImg.src = `/assets/images/${listMusic[indexNumb - 1].src}.jpg`;
-    mainAudio.src = `/songs/${listMusic[indexNumb - 1].src}.mp3`;
+    musicImg.src = `./${listMusic[indexNumb - 1].src}.jpg`;
+    mainAudio.src = `./${listMusic[indexNumb - 1].src}.mp3`;
 }
 
 function playMusic() {
@@ -179,16 +179,16 @@ mainAudio.addEventListener("ended", () => {
 
 for (let i = 0; i < listMusic.length; i++) {
     let liTag = `<li li-index="${i + 1}">
-                    <img src="assets/images/${listMusic[i].src}.jpg" alt="">
+                    <img src="./${listMusic[i].src}.jpg" alt="">
                     <div class="row">
                       <span>${listMusic[i].name}</span>
                       <p>${listMusic[i].artist}</p>
                     </div>
                     <span id="${listMusic[i].src}" class="audio-duration">3:40</span>
-                    <audio class="${listMusic[i].src}" src="songs/${listMusic[i].src}.mp3"></audio>
+                    <audio class="${listMusic[i].src}" src="./${listMusic[i].src}.mp3"></audio>
                  </li>
-                 <div class="download-btn">
-                    <a href="songs/${listMusic[i].src}.mp3" download="${listMusic[i].name}">
+                  <div class="download-btn">
+                    <a href="./${listMusic[i].src}.mp3" download="${listMusic[i].name}">
                       <i class="fa-solid fa-download"></i>
                     </a>
                  </div>`;
