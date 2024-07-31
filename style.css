@@ -1660,15 +1660,17 @@ footer{
       }
       .song-details{
         position: absolute;
+        left: 2px;
       }
       .progress-area{
         position: absolute;
+        top: 30%;
         left: 30%;
         width: 60%;
       }
       .controls{
         position: absolute;
-        left: 30%;
+        left: 50%;
         height: 30px;
         
       }/*
