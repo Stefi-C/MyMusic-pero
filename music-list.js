@@ -51,6 +51,12 @@ const listMusic = [
       artist: "Pero",
       img: "music-6",
       src: "music-6"
+    }, {
+      id: 6,
+      name: "Uptown(Wi-Fi Connect)",
+      artist: "Pero - ft Dj NeNe",
+      img: "music-7",
+      src: "music-7"
     },];
     
     // like this paste it and remember to give comma after ending of this bracket }
