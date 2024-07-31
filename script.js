@@ -235,7 +235,7 @@ function clicked(element) {
     playMusic();
     playingSong();
 }
-/*--------------------------------video*/
+/*--------------------------------video
 
 var videoPlayer = document.getElementById("videoPlayer"),
     myVideo = document.getElementById("myVideo");
@@ -264,7 +264,7 @@ listVideo.forEach(video => {
       };
     });
 })
-
+*/
 
 
       /*--------------------------------gallery*/
@@ -418,3 +418,4 @@ listVideo.forEach(video => {
          serviceBox.classList.add('active');//da correggere
          serviceInfoText.classList.add('active');//da correggere
        };
+    });

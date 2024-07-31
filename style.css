@@ -898,7 +898,7 @@ nav{
 
 
 
-
+/*
 #videos{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
@@ -993,7 +993,7 @@ video:focus{
     font-size: 17px;
 }
 
-
+*/
 
 
 
@@ -1667,7 +1667,7 @@ footer{
         left: 30%;
         height: 30px;
         
-      }
+      }/*
       .videos-container{
         display: flex;
         align-items: center;
@@ -1682,7 +1682,7 @@ footer{
       }
       .vid video{
         width: 80px;
-      }
+      }*/
       #services{
         height: 100vh;
     }
@@ -1709,7 +1709,7 @@ footer{
       
 }
 @media only screen and (max-width: 1000px){
-  
+  /*
     .videos-container{
         display: flex;
         align-items: center;
@@ -1725,7 +1725,7 @@ footer{
       }
       .vid video{
         width: 70px;
-      }
+      }*/
       .main-concert{
         flex-direction: column;
       }
@@ -1847,7 +1847,7 @@ footer{
     }
     .services{
        display: none;
-    }
+    }/*
     .videos-container{
       flex-direction: column;
     }
@@ -1861,7 +1861,7 @@ footer{
    }
    .video-list{
     width: 100%;
-   }
+   }*/
    .gallery {
     width: 100%;
    }
