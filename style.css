@@ -1271,7 +1271,7 @@ input:active{
 }
 .bio-p{
     font-size: 18px;
-    line-height: 24px;
+    line-height: 28px;
     text-align: justify;
 
 }
@@ -1281,6 +1281,10 @@ input:active{
     height: 100%;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     background:radial-gradient(circle, rgba(255,255,255,0.5787037037037037) 2%, rgba(164,164,164,1) 100%), url('./bio-page.jpeg');
     box-sizing: border-box;
