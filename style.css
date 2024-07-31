@@ -1625,6 +1625,10 @@ footer{
     }
     #ul-tag{
         height: 80%;
+        
+    }
+    #ul-tag li img{
+      margin-right: 5px;
     }
     .wrapper{
         background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
