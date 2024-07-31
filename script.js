@@ -331,11 +331,10 @@ listVideo.forEach(video => {
           
           Email.send({
               Host: "smtp.elasticemail.com",
-              Username: "urboyperomusic@gmail.com",
-              Password: "BE9B5A1F036F5B6217323DE15763538CD6A8",
-              To: 'urboyperomusic@gmail.com',
-              From: "urboyperomusic@gmail.com",
-              Subject: subject.value,
+              Username: "peroboymusic@gmail.com",
+              Password: "6B6DF59998756A663132E9CBAD308CD13821",
+              To: 'peroboymusic@gmail.com',
+              From: "peroboymusic@gmail.com",
               Body: bodyMessage
           }).then(
               message => {
@@ -404,7 +403,7 @@ listVideo.forEach(video => {
           e.preventDefault();
           checkInputs();
 
-          if (!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !subject.classList.contains("error") && !mess.classList.contains("error")) {
+          if (!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !mess.classList.contains("error")) {
               sendEmail();
               form.reset();
           }

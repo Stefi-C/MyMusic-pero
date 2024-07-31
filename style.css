@@ -1813,6 +1813,8 @@ footer{
   }
   .music-list{
       height: 100%;
+      background: linear-gradient(186deg, rgba(198,36,143,0.5214460784313726) 53%, rgba(246,249,111,0.5) 99%)
+    ,url(./mplayerbg.jpeg);
   }
     .main-book{display: none;}
     .main-about{display: block;
