@@ -1567,7 +1567,7 @@ footer{
    #menu-toggle{
     position: fixed;
     cursor: pointer;
-    right:  10%;
+    right:  5%;
     top: 7%;
     font-size: 30px;
     width: 50px;
@@ -1825,7 +1825,7 @@ footer{
     
   .wrapper{
     width: 90%;
-    margin-left: 0;
+    margin-left: 15px;
   }
   .tracks{
       height: 350px;
