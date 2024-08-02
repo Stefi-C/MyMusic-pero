@@ -816,25 +816,41 @@ nav{
     background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(./upcoming-bg.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 30px;
     box-shadow: inset 3px 3px 10px -2px #000000;
     color: var(--blue);
 }
 .concert{
-    width: 30%;
-    box-shadow: var(--image-shadow);
+    height: 300px;
+    width: 100%;
     margin: 30px;
     padding: 30px;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     text-align: center;
+    position: relative;
 }
-.concert img{
-    width: 100%;
-    height: auto;
+.concert-img{
+  width: 90%;
+}
+.concert-img img{
+    width: 280px;
+    height: 300px;
     box-shadow: 3px 3px 10px -2px #000000;
+    z-index: 0;position: absolute;
+    left: 10px;
+
+}
+
+.concert-details{
+  z-index: 666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .concert h2{
     color: var(--blue);
@@ -1827,11 +1843,7 @@ footer{
     .first-bio-title{
       font-family: var(--madimi);
     }
-    .concert img{
-       width: 100px;
-       height: 100px;
-
-    }
+    
     .concert-details{
         padding: 5px;
     }
