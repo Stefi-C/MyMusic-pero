@@ -423,3 +423,32 @@ listVideo.forEach(video => {
          serviceInfoText.classList.add('active');//da correggere
        };
     });
+
+    //upcoming streaming
+    // script.js
+// Imposta la data di scadenza del conto alla rovescia
+const countdownDate = new Date("Sep 5, 2024 15:00:00").getTime();
+
+// Aggiorna il conto alla rovescia ogni secondo
+const countdownFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    // Calcola giorni, ore, minuti e secondi
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Visualizza il risultato nel div con id="countdown"
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // Se il conto alla rovescia è terminato, mostra l'iframe con lo streaming
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "Il tempo è scaduto!";
+        const iframe = document.getElementById("streaming-iframe");
+        iframe.src = "https://example.com/streaming";  // Inserisci il link allo streaming qui
+        iframe.style.display = "block";
+    }
+}, 1000);
