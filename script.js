@@ -16,7 +16,28 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
   });
 
+//navbar
+// scrollNav.js
 
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+function handleScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll down - hide the navbar
+        navbar.style.top = "-100px"; // Adjust based on your navbar height
+    } else {
+        // Scroll up - show the navbar
+        navbar.style.top = "0";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+}
+
+// Attach the scroll event listener
+window.addEventListener("scroll", handleScroll);
 //---------------------------------------------------------------musicPlayer
 const wrapper = document.querySelector(".wrapper"),
     musicImg = wrapper.querySelector(".img-area img"),

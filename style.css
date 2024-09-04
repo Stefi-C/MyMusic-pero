@@ -52,7 +52,7 @@ nav{
     top:0;
     text-align: center;
     padding: 20px;
-    width: 100%;
+    width: 100vw;
     height: 30px;
     display: flex;
     flex-wrap: nowrap;
@@ -62,6 +62,7 @@ nav{
     font-family: var(--madimi);
     opacity: 0.8;
     z-index:1000;
+    transition: top 0.3s ease-in-out;
     
 }
 .logo h1{
@@ -916,6 +917,7 @@ nav{
 .upcoming-stream{
   background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(./upcoming-bg.jpeg) no-repeat;
   background-size: cover;
+  background-position: center;
   font-family: Arial, sans-serif;
   color:#020f55;
   font-family: var(--josefine);
@@ -945,7 +947,7 @@ nav{
 }
 
 
-/*
+
 #videos{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
@@ -1040,7 +1042,7 @@ video:focus{
     font-size: 17px;
 }
 
-*/
+
 
 
 
