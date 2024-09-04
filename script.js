@@ -16,7 +16,28 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
   });
 
+//navbar
+// scrollNav.js
 
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+function handleScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll down - hide the navbar
+        navbar.style.top = "-100px"; // Adjust based on your navbar height
+    } else {
+        // Scroll up - show the navbar
+        navbar.style.top = "0";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+}
+
+// Attach the scroll event listener
+window.addEventListener("scroll", handleScroll);
 //---------------------------------------------------------------musicPlayer
 const wrapper = document.querySelector(".wrapper"),
     musicImg = wrapper.querySelector(".img-area img"),
@@ -319,95 +340,100 @@ listVideo.forEach(video => {
       })
      
       //-----------------contact form
-      const form = document.querySelector('form');
-      const fullName = document.getElementById('fname');
-      const email = document.getElementById('email');
-      const phone = document.getElementById('phone');
-      const subject = document.getElementById('subject');
-      const mess = document.getElementById('message');
-
-      function sendEmail() {
-          const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${mess.value}`;
-          
-          Email.send({
-              Host: "smtp.elasticemail.com",
-              Username: "peroboymusic@gmail.com",
-              Password: "6B6DF59998756A663132E9CBAD308CD13821",
-              To: 'peroboymusic@gmail.com',
-              From: "peroboymusic@gmail.com",
-              Body: bodyMessage
-          }).then(
-              message => {
-                  if (message == 'OK') {
-                      Swal.fire({
-                          title: "Success",
-                          text: "Message sent successfully!",
-                          icon: "success"
-                      });
-                  } else {
-                      Swal.fire({
-                          title: "Error",
-                          text: "Message not sent. Please try again.",
-                          icon: "error"
-                      });
-                  }
-              }
-          ).catch(
-              error => {
-                  Swal.fire({
-                      title: "Error",
-                      text: "Message not sent. Please try again.",
-                      icon: "error"
-                  });
-              }
-          );
-      }
-      
-      function checkInputs() {
-          const items = document.querySelectorAll('.item');
-          for (const item of items) {
-              if (item.value == "") {
-                  item.classList.add('error');
-                  item.parentElement.classList.add('error');
-              } else {
-                  item.classList.remove('error');
-                  item.parentElement.classList.remove('error');
-              }
-              if (item === email) {
-                  checkEmail();
-              }
-          }
-      }
-
-      function checkEmail() {
-          const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
-          const errorTxtEmail = document.querySelector(".error-txt.email");
-
-          if (!email.value.match(emailRegex)) {
-              email.classList.add("error");
-              email.parentElement.classList.add("error");
-
-              if (email.value != "") {
-                  errorTxtEmail.innerText = "Enter a valid email address";
-              } else {
-                  errorTxtEmail.innerText = "Email Address can't be blank";
-              }
-          } else {
-              email.classList.remove("error");
-              email.parentElement.classList.remove("error");
-              errorTxtEmail.innerText = "";
-          }
-      }
-
-      form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          checkInputs();
-
-          if (!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !mess.classList.contains("error")) {
-              sendEmail();
-              form.reset();
-          }
-      });
+      document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector('form');
+        const fullName = document.getElementById('fname');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const subject = document.getElementById('subject');
+        const mess = document.getElementById('message');
+    
+        function sendEmail() {
+            const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${mess.value}`;
+            
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "urboyperomusic@gmail.com",
+                Password: "9D94291748048B2B2B0FDF26FB44A3DB1416",
+                To: 'urboyperomusic@gmail.com',
+                From: "urboyperomusic@gmail.com",
+                Subject: subject.value,
+                Body: bodyMessage
+            }).then(
+                message => {
+                    if (message === 'OK') {
+                        Swal.fire({
+                            title: "Success",
+                            text: "Message sent successfully!",
+                            icon: "success"
+                        });
+                    } else {
+                        console.error('Error:', message);
+                        Swal.fire({
+                            title: "Error",
+                            text: "Message not sent. Please try again.",
+                            icon: "error"
+                        });
+                    }
+                }
+            ).catch(
+                error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        title: "Error",
+                        text: "Message not sent. Please try again.",
+                        icon: "error"
+                    });
+                }
+            );
+        }
+    
+        function checkInputs() {
+            const items = document.querySelectorAll('.item');
+            for (const item of items) {
+                if (item.value === "") {
+                    item.classList.add('error');
+                    item.parentElement.classList.add('error');
+                } else {
+                    item.classList.remove('error');
+                    item.parentElement.classList.remove('error');
+                }
+                if (item === email) {
+                    checkEmail();
+                }
+            }
+        }
+    
+        function checkEmail() {
+            const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/i;
+            const errorTxtEmail = document.querySelector(".error-txt.email");
+    
+            if (!email.value.match(emailRegex)) {
+                email.classList.add("error");
+                email.parentElement.classList.add("error");
+    
+                if (email.value !== "") {
+                    errorTxtEmail.innerText = "Enter a valid email address";
+                } else {
+                    errorTxtEmail.innerText = "Email Address can't be blank";
+                }
+            } else {
+                email.classList.remove("error");
+                email.parentElement.classList.remove("error");
+                errorTxtEmail.innerText = "";
+            }
+        }
+    
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            checkInputs();
+    
+            if (!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !mess.classList.contains("error")) {
+                sendEmail();
+                form.reset();
+            }
+        });
+    });
        //----------------contact button
        const contactInfoBtn = document.querySelectorAll('#info-btn');
        const serviceBox = document.querySelectorAll('.service-box');
@@ -418,3 +444,32 @@ listVideo.forEach(video => {
          serviceInfoText.classList.add('active');//da correggere
        };
     });
+
+    //upcoming streaming
+    // script.js
+// Imposta la data di scadenza del conto alla rovescia
+const countdownDate = new Date("Sep 5, 2024 15:00:00").getTime();
+
+// Aggiorna il conto alla rovescia ogni secondo
+const countdownFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    // Calcola giorni, ore, minuti e secondi
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Visualizza il risultato nel div con id="countdown"
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // Se il conto alla rovescia è terminato, mostra l'iframe con lo streaming
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "Il tempo è scaduto!";
+        const iframe = document.getElementById("streaming-iframe");
+        iframe.src = "https://example.com/streaming";  // Inserisci il link allo streaming qui
+        iframe.style.display = "block";
+    }
+}, 1000);

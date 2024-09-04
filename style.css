@@ -52,7 +52,7 @@ nav{
     top:0;
     text-align: center;
     padding: 20px;
-    width: 100%;
+    width: 100vw;
     height: 30px;
     display: flex;
     flex-wrap: nowrap;
@@ -62,6 +62,7 @@ nav{
     font-family: var(--madimi);
     opacity: 0.8;
     z-index:1000;
+    transition: top 0.3s ease-in-out;
     
 }
 .logo h1{
@@ -816,25 +817,41 @@ nav{
     background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(./upcoming-bg.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 30px;
     box-shadow: inset 3px 3px 10px -2px #000000;
     color: var(--blue);
 }
 .concert{
-    width: 30%;
-    box-shadow: var(--image-shadow);
+    height: 300px;
+    width: 100%;
     margin: 30px;
     padding: 30px;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     text-align: center;
+    position: relative;
 }
-.concert img{
-    width: 100%;
-    height: auto;
+.concert-img{
+  width: 90%;
+}
+.concert-img img{
+    width: 280px;
+    height: 300px;
     box-shadow: 3px 3px 10px -2px #000000;
+    z-index: 0;position: absolute;
+    left: 10px;
+
+}
+
+.concert-details{
+  z-index: 666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .concert h2{
     color: var(--blue);
@@ -897,8 +914,40 @@ nav{
 }
 
 
+.upcoming-stream{
+  background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(./upcoming-bg.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color:#020f55;
+  font-family: var(--josefine);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: inset 3px 3px 10px -2px #000000;
+  height: 90vh;
+  margin: 0;
+}
 
-/*
+#countdown-container {
+  text-align: center;
+}
+
+#countdown {
+  font-size: 3em;
+  margin-top: 20px;
+}
+
+#iframe {
+  width: 100%;
+  height: 80vh;
+  margin-top: 20px;
+}
+
+
+
 #videos{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
@@ -993,7 +1042,7 @@ video:focus{
     font-size: 17px;
 }
 
-*/
+
 
 
 
@@ -1551,7 +1600,7 @@ footer{
    #menu-toggle{
     position: fixed;
     cursor: pointer;
-    right:  10%;
+    right:  5%;
     top: 7%;
     font-size: 30px;
     width: 50px;
@@ -1639,7 +1688,7 @@ footer{
         margin-left: -50px;
         width: 70%;
         top: 0px;
-        left: 50%;
+        left: 45%;
         transform: translateX(-50%);
         position: absolute;
     }
@@ -1787,7 +1836,12 @@ footer{
       background: transparent;
       width: 90%;
     }
-    
+    #banner{
+      background: linear-gradient(90deg, rgba(246,249,111,0.5) 0%, rgba(2, 14, 85, 0.526) 40%, rgba(198, 36, 144, 0.534) 100%),
+      url(./banner-bg-2.jpg);
+      background-size: cover;
+      background-position: center;
+    }
     .title h1{
       width: 100%;
       height: 50%;
@@ -1804,7 +1858,7 @@ footer{
     
   .wrapper{
     width: 90%;
-    margin-left: 0;
+    margin-left: 15px;
   }
   .tracks{
       height: 350px;
@@ -1827,11 +1881,7 @@ footer{
     .first-bio-title{
       font-family: var(--madimi);
     }
-    .concert img{
-       width: 100px;
-       height: 100px;
-
-    }
+    
     .concert-details{
         padding: 5px;
     }
