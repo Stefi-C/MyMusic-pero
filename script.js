@@ -467,7 +467,7 @@ const countdownFunction = setInterval(function() {
     // Se il conto alla rovescia è terminato, mostra l'iframe con lo streaming
     if (distance < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "Il tempo è scaduto!";
+        document.getElementById("countdown").innerHTML = "Time's up!";
         const iframe = document.getElementById("streaming-iframe");
         iframe.src = "https://example.com/streaming";  // Inserisci il link allo streaming qui
         iframe.style.display = "block";
