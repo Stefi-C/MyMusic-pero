@@ -1,3 +1,15 @@
+<?php 
+setcookie('cookie_name', 'cookie_value', [
+  'expires' => time() + 86400,
+  'path' => '/',
+  'domain' => 'yourdomain.com',
+  'secure' => true, // This must be true for SameSite=None
+  'httponly' => true,
+  'samesite' => 'None' // This allows cross-site cookies
+]);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,12 +170,18 @@
             </div>
         </div>-->
         <div class="upcoming-stream">
-            <div class="countdown-container">
-                <h1>Time up:</h1>
-                <div id="countdown"></div>
+            <div class="countdown-container" id="container">
+              <h1>Gigs Streaming in...:</h1>
+              <div id="countdown"></div>
+              <div id="status-message"></div>
             </div>
-            <iframe src="" frameborder="0" id="streaming-iframe" style="display: none;"></iframe>
-        </div>
+            
+            <!-- Iframe for streaming -->
+            <iframe id="streaming-iframe" width="560" height="315" 
+              style="display:none;" 
+              src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+          </div>
     </section>
     <!--<section id="videos">
         <h2 class="main-title">Oficial Clips</h2>

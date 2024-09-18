@@ -443,33 +443,143 @@ listVideo.forEach(video => {
          serviceBox.classList.add('active');//da correggere
          serviceInfoText.classList.add('active');//da correggere
        };
-    });
 
-    //upcoming streaming
-    // script.js
-// Imposta la data di scadenza del conto alla rovescia
-const countdownDate = new Date("Sep 5, 2024 15:00:00").getTime();
+// Variabile per salvare più date di streaming
+let countdownDates = [];
 
-// Aggiorna il conto alla rovescia ogni secondo
-const countdownFunction = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
+// Funzione per iniziare il conto alla rovescia per una nuova data
+function addNewStreamingDate() {
+    const inputDate = document.getElementById("streaming-date").value;
 
-    // Calcola giorni, ore, minuti e secondi
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Visualizza il risultato nel div con id="countdown"
-    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-    // Se il conto alla rovescia è terminato, mostra l'iframe con lo streaming
-    if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "Time's up!";
-        const iframe = document.getElementById("streaming-iframe");
-        iframe.src = "https://example.com/streaming";  // Inserisci il link allo streaming qui
-        iframe.style.display = "block";
+    if (!inputDate) {
+        alert("Please select a date and time for the streaming.");
+        return;
     }
-}, 1000);
+
+    const newDate = new Date(inputDate).getTime();
+    if (isNaN(newDate)) {
+        alert("Invalid date format. Please check your input.");
+        return;
+    }
+
+    countdownDates.push(newDate);
+
+    // Rimuovi le date scadute prima di salvare nel localStorage
+    filterExpiredDates();
+
+    // Salva le nuove date nel localStorage
+    localStorage.setItem('countdownDates', JSON.stringify(countdownDates));
+
+    // Avvia la visualizzazione del prossimo countdown se non è già in corso
+    if (!streamingInProgress) {
+        updateCountdown();
+    }
+}
+
+// Funzione per filtrare le date scadute
+function filterExpiredDates() {
+    const now = new Date().getTime();
+    countdownDates = countdownDates.filter(date => date > now);
+}
+
+// Controlla se ci sono countdownDates salvati nel localStorage e ripristinali
+const storedDates = localStorage.getItem('countdownDates');
+if (storedDates) {
+    countdownDates = JSON.parse(storedDates);
+    // Rimuovi le date scadute
+    filterExpiredDates();
+} else {
+    // Aggiungi date di esempio per testare
+    countdownDates = [
+        new Date(new Date().getTime() + 1 * 60 * 1000).getTime(), // Data di esempio: 5 minuti da ora
+        new Date("2024-09-17T13:30:00").getTime(), // Data di esempio: oggi alle 13:30
+        new Date("2024-09-26T00:00:00").getTime(), // Data futura
+        new Date("2024-10-03T00:00:00").getTime(), // Data futura
+        new Date("2024-10-10T00:00:00").getTime(), // Data futura
+        new Date("2024-10-17T00:00:00").getTime()  // Data futura
+    ];
+    // Rimuovi le date scadute (se ci sono)
+    filterExpiredDates();
+    localStorage.setItem('countdownDates', JSON.stringify(countdownDates));
+}
+
+// Variabile per tracciare se uno streaming è in corso
+let streamingInProgress = false;
+
+// Funzione per aggiornare il countdown del prossimo evento
+function updateCountdown() {
+    if (countdownDates.length === 0) {
+        document.getElementById("countdown").style.display = "none";
+        document.getElementById("status-message").innerHTML = "No upcoming streams";
+        return;
+    }
+
+    const now = new Date().getTime();
+    const countdownContainer = document.getElementById("countdown");
+    const statusMessage = document.getElementById("status-message");
+
+    // Trova la prossima data di streaming
+    const nextDate = countdownDates[0]; // Sempre la prima data
+
+    const distance = nextDate - now;
+
+    if (distance > 0) {
+        // Calcola giorni, ore, minuti e secondi rimanenti
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Visualizza il countdown per la prossima data
+        countdownContainer.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownContainer.style.display = "block";
+        statusMessage.innerHTML = "";
+
+    } else if (!streamingInProgress) {
+        // Se il countdown è terminato, inizia lo streaming
+        startStreaming();
+    }
+}
+
+// Funzione per avviare lo streaming
+// When streaming starts
+function startStreaming() {
+    const iframe = document.getElementById("streaming-iframe");
+    const countdownContainer = document.getElementById("countdown");
+    const statusMessage = document.getElementById("status-message");
+
+    // Hide countdown and show iframe
+    countdownContainer.style.display = "none";
+    statusMessage.innerHTML = "Streaming has started!";
+    
+    iframe.src = "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4"; // link of streaming
+    iframe.style.display = "block"; // Make iframe visible
+    statusMessage.innerHTML = "Streaming has started!";
+
+    // Dopo 3 ore (10800 secondi) simula la fine dello streaming
+    setTimeout(function() {
+        iframe.style.display = "none"; // Nascondi l'iframe
+        statusMessage.innerHTML = "Streaming is over, more info coming soon";
+
+        // Rimuovi la data corrente e aggiorna il localStorage
+        countdownDates.shift(); // Rimuovi il primo elemento (data corrente)
+        filterExpiredDates(); // Rimuovi eventuali date scadute
+        localStorage.setItem('countdownDates', JSON.stringify(countdownDates));
+
+        // Avvia un nuovo conto alla rovescia dopo 3 ore
+        setTimeout(function() {
+            streamingInProgress = false;
+            statusMessage.innerHTML = "Next streaming…";
+            updateCountdown();
+        }, 3 * 60 * 60 * 1000); // Attendi 3 ore prima di iniziare il nuovo countdown
+
+    }, 10800000); // 3 ore di streaming simulato
+}
+
+// Avvia il conto alla rovescia per la prossima data e aggiorna ogni secondo
+setInterval(updateCountdown, 1000);
+  });
+
+
+
+    
