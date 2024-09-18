@@ -814,7 +814,7 @@ nav{
 }
 .main-concert{
     display: flex;
-    background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%),url(./upcoming-bg.jpeg) no-repeat;
+    background:linear-gradient(45deg,  #edf2e5b8 0%,  #edf2e5b8 100%);
     background-size: cover;
     background-position: center;
     justify-content: center;
