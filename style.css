@@ -28,10 +28,8 @@ img, iframe, video {
   height: auto;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px; /* o qualsiasi larghezza massima desiderata */
-  margin: 0 auto; /* Centra il contenitore */
+html{
+  scroll-behavior: smooth;
 }
 body{
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
@@ -45,6 +43,29 @@ li{
 }
 a{
     text-decoration: none;
+}
+.language-switcher {
+  margin-bottom: 20px;
+  position: fixed;
+  left: 15%;
+  top: 10px;
+  z-index: 1010;
+}
+
+.language-switcher button {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-family: var(--josefine);
+  background:linear-gradient(90deg, rgba(247, 249, 111, 0.286)0%, rgba(36, 76, 198, 0.426) 100%);
+  color: var(--white);
+  text-shadow: var(--text-shadow);
+}
+.container {
+  width: 100%;
+  max-width: 1200px; /* o qualsiasi larghezza massima desiderata */
+  margin: 0 auto; /* Centra il contenitore */
 }
 nav{
     position: fixed;

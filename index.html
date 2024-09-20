@@ -15,7 +15,12 @@
    <script src="https://kit.fontawesome.com/36ca5abeae.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   
+  
+    <div class="language-switcher">
+        <button id="englishBtn">En</button>
+        <button id="germanBtn">De</button>
+    </div>
+ <div class="english-version" style="display: block;">
     <section id="banner">
         <nav id="navbar">
             <div class="logo">
@@ -35,6 +40,7 @@
                 </ul>
                
             </div>
+          
             <i id="menu-toggle" class="fa-solid fa-bars"></i>
     
         </nav>
@@ -492,6 +498,341 @@
         
     </footer>
     
+ </div>
+ <div class="german-version" style="display: none;">
+   
+        <section id="banner">
+            <nav id="navbar">
+                <div class="logo">
+                    <h1>MyMusic</h1>
+                </div>
+                <div class="menu">
+                    <ul id="menu-list" class="menu-list">
+                        <li class="hideOnMobile"><a href="#banner">Home</a></li>
+                        <li class="hideOnMobile"><a href="#discografy">Discografie</a></li>
+                        <li class="hideOnMobile"><a href="#upcoming">Kommende Auftritte</a></li>
+                        <li class="hideOnMobile"><a href="#gallery">Galerie</a></li>
+                        <li class="hideOnMobile"><a href="#bio">Biografie</a></li>
+                        <li class="hideOnMobile"><a href="#services">Dienstleistungen</a></li>
+                        <li class="hideOnMobile"><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+               
+                <i id="menu-toggle" class="fa-solid fa-bars"></i>
+            </nav>
+            <div class="title">
+                <h1>PeRo</h1>
+                <p>Geboren im lebhaften kulturellen Gefüge Nigerias, ist Peter Fabian, bekannt als Pero, ein dynamischer und gefühlvoller Afrobeat-Künstler und Songwriter, der mit einer einzigartigen Mischung aus rhythmischem Geschichtenerzählen und mitreißenden Melodien das Publikum begeistert.</p>
+            </div>
+        </section>
+        
+        <section id="discografy">
+            <h2 class="main-title">Discografie</h2>
+            <div class="play-list">
+                <h3 class="subtitle">Musikliste</h3>
+            </div>
+            <div class="main-musicplayer">
+                <div class="tracks">
+                    <div class="music-list">
+                        <div class="header">
+                            <div class="row">
+                                <span>MyMusic</span>
+                            </div>
+                        </div>
+                        <ul id="ul-tag">
+                            <div>
+                                <ul id="root"></ul>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box-player">
+                    <div class="wrapper">
+                        <div class="m-top-bar">
+                            <span>Jetzt Spielen</span>
+                        </div>
+                        <div class="music-bar">
+                            <div class="img-area">
+                                <img src="" alt="">
+                            </div>
+                            <div class="song-details">
+                                <p class="name"></p>
+                                <p class="artist"></p>
+                            </div>
+                            <div class="progress-area">
+                                <div class="progress-bar">
+                                    <audio id="main-audio" src=""></audio>
+                                </div>
+                                <div class="song-timer">
+                                    <span class="current-time">0:00</span>
+                                    <span class="max-duration">0:00</span>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <i id="repeat-plist" class="material-icons c1" title="wiederholen">repeat</i>
+                                <div class="c2">
+                                    <i id="prev" class="material-icons ">skip_previous</i>
+                                </div>
+                                <div class="play-pause">
+                                    <i class="material-icons play">play_arrow</i>
+                                </div>
+                                <div class="c2">
+                                    <i id="next" class="material-icons">skip_next</i>
+                                </div>
+                                <i id="shuffle-music" class="material-icons c1" title="mischen">shuffle</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="upcoming">
+            <h2 class="main-title">Kommende</h2>
+            <div class="coming-soon">
+                <h3 class="subtitle">Nächste Auftritte</h3>
+            </div>
+            <div class="main-concert">
+                <div class="concert">
+                    <div class="concert-details">
+                        <h2>1. Mai 2024</h2>
+                        <p>Berlin, Be</p>
+                        <p>Urania</p>
+                        <div class="concert-btn">
+                            <button>Tickets</button>
+                        </div>
+                    </div>
+                    <div class="concert-img">
+                        <img src="./upcoming-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="concert-desc">
+                    <h2>Titel der Veranstaltung</h2>
+                    <div class="c-desc">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+                        <div class="adresse">
+                            <p>Someadressestraße 1 <br> 10020, Berlin</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=..." width="150" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upcoming-stream">
+                <div class="countdown-container" id="container">
+                    <h1>Streaming in...:</h1>
+                    <div id="countdown"></div>
+                    <div id="status-message"></div>
+                </div>
+                <iframe id="streaming-iframe" width="560" height="315" style="display:none;" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    
+        <section id="gallery">
+            <h2 class="main-title">Galerie</h2>
+            <div class="coming-soon">
+                <h3 class="subtitle">Meine Fotos... Meine Videos</h3>
+            </div>
+            <div class="main-gallery">
+                <div class="cover-gallery"></div>
+                <div class="gallery"> 
+                    <div class="gallery-image"><img src="./gallery-img1.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img2.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img3.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img4.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img5.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img6.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img7.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img8.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img9.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img10.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img11.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img12.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img13.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img14.jpg" class="image"></div>
+                    <div class="gallery-image"><img src="./gallery-img15.jpg" class="image"></div>
+                    <div class="popup">
+                        <div class="top-bar">
+                            <p class="image-name">img1.png</p>
+                            <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+                        </div>
+                        <div class="arrow-btn left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div class="arrow-btn right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        <img src="" class="large-image">
+                        <h1 class="index">01</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="bio">
+            <h2 class="main-title">Biografie</h2>
+            <h3 class="subtitle">Über mich</h3>
+            <div class="main-book">
+                <div class="book">
+                    <input class="book-command" type="checkbox" id="c1">
+                    <input class="book-command" type="checkbox" id="c2">
+                    <input class="book-command" type="checkbox" id="c3">
+                    <div id="cover">
+                        <h2>Ich, meine Erfahrungen und Ziele</h2>
+                    </div>
+                    <div class="flip-book"> 
+                        <div class="flip" id="p1">
+                            <div class="back">
+                                <img src="./bio-path.jpeg" class="book-img">
+                                <label for="c1" class="back-btn">Zurück</label>
+                            </div>
+                            <div class="front">
+                                <h2>Wer bin ich</h2>
+                                <p class="bio-p">Ich bin Pero, ein dynamischer und gefühlvoller Afrobeat-Künstler aus Nigeria, der rhythmisches Geschichtenerzählen mit mitreißenden Melodien verbindet. Geboren als Peter Fabian im Bundesstaat Imo, wurde ich von klein auf in das reiche musikalische Erbe Nigerias eingeführt. Als Sänger, Songwriter und Performer strebe ich danach, den lebendigen Geist des Afrobeat einzufangen und Musik zu schaffen, die weltweit Resonanz findet.</p>
+                                <label for="c1" class="next-btn">Nächste</label>
+                            </div>
+                        </div>
+                        <div class="flip" id="p2">
+                            <div class="back">
+                                <img src="./bio-mydream.jpeg" class="book-img">
+                                <label for="c2" class="back-btn">Zurück</label>
+                            </div>
+                            <div class="front">
+                                <h2>Mein Weg</h2>
+                                <p class="bio-p">Meine musikalische Reise begann in Nigeria, wo ich stark von den Klängen des Afrobeat beeinflusst wurde. Aufgewachsen in dieser kulturell reichen Umgebung entwickelte ich früh eine Leidenschaft für Musik. Der Umzug nach Deutschland ermöglichte es mir, traditionelle afrikanische Rhythmen mit zeitgenössischen Einflüssen zu kombinieren und einen einzigartigen Stil zu kreieren, der mit einem globalen Publikum resoniert.</p>
+                                <label for="c2" class="next-btn">Nächste</label>
+                            </div>
+                        </div>
+                        <div class="flip" id="p3">
+                            <div class="back">
+                                <img src="./bio-aboutme.jpeg" class="book-img">
+                                <label for="c3" class="back-btn">Zurück</label>
+                            </div>
+                            <div class="front">
+                                <h2>Meine Bestrebungen</h2>
+                                <p class="bio-p">Ich strebe danach, die Grenzen des Afrobeat zu erweitern und dabei seinen Wurzeln treu zu bleiben. Mein Ziel ist es, afrikanische Musik auf die globale Bühne zu heben und ein tieferes Verständnis für ihre kulturelle Vielfalt zu fördern. Durch meine Kunst möchte ich inspirieren und Menschen aus unterschiedlichen Hintergründen vereinen.</p>
+                                <label for="c3" class="next-btn">Nächste</label>
+                            </div>
+                        </div>
+                        <div class="front end-page">
+                            <h2>Mein Dank</h2>
+                            <p class="bio-p">Ich bin zutiefst dankbar für die unerschütterliche Unterstützung und Liebe meiner Familie, Freunde und Fans, die an meiner Musik von Anfang an geglaubt haben. Ihre Ermutigung ist die treibende Kraft meiner Kreativität. Vielen Dank, dass Sie Teil meiner musikalischen Reise sind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-about">
+                <div class="about-item">
+                    <h2 class="first-bio-title">Ich, meine Erfahrungen und Ziele</h2>
+                    <h2>Wer bin ich</h2>
+                    <p class="bio-p">Ich bin Pero, ein dynamischer und gefühlvoller Afrobeat-Künstler aus Nigeria, der rhythmisches Geschichtenerzählen mit mitreißenden Melodien verbindet...</p>
+                    <h2>Mein Weg</h2>
+                    <p class="bio-p">Meine musikalische Reise begann in Nigeria...</p>
+                    <h2>Meine Bestrebungen</h2>
+                    <p class="bio-p">Ich strebe danach, die Grenzen des Afrobeat zu erweitern...</p>
+                    <h2>Mein Dank</h2>
+                    <p class="bio-p">Ich bin zutiefst dankbar für die unerschütterliche Unterstützung...</p>
+                </div>
+            </div>
+        </section>
+    
+        <section id="services">
+            <h2 class="main-title">Dienstleistungen</h2>
+            <h3 class="subtitle">Buchen Sie mich</h3>
+            <div class="main-services">    
+                <div class="services-content">
+                    <div class="contact-form">
+                        <div class="form">
+                            <form action="mail.php" method="post">
+                                <h2>Buchung hier</h2>
+                                <input class="form-label item" type="text" id="fname" name="name" required placeholder="Name" autocomplete="off">
+                                <div class="item error-txt">Vollständiger Name darf nicht leer sein</div>
+                                <input class="form-label item" type="email" id="email" name="email" required placeholder="E-Mail" autocomplete="off">
+                                <div class="item error-txt email">E-Mail darf nicht leer sein</div>
+                                <input class="form-label item" type="text" id="phone" name="phone" required placeholder="Telefon" autocomplete="off">
+                                <div class="item error-txt">Telefonnummer darf nicht leer sein</div>
+                                <textarea name="message item" id="message" cols="30" rows="10" required placeholder="Ihre Anfrage..."></textarea>
+                                <div class="item error-txt">Nachricht darf nicht leer sein</div>
+                                <input class="submit" type="submit" name="send" value="Absenden" required>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="services">
+                        <div class="service-box">
+                            <h2><i class="fa-solid fa-wine-glass"></i> Clubs & Bars</h2>
+                            <p class="info-txt">Beleben Sie Ihren Club oder Ihre Bar mit unserem Sänger, Entertainer und DJ...</p>
+                        </div>
+                        <div class="service-box">
+                            <h2><i class="fa-solid fa-heart"></i> Hochzeiten</h2>
+                            <p class="info-txt">Machen Sie Ihren Hochzeitstag unvergesslich...</p>
+                        </div>
+                        <div class="service-box">
+                            <h2><i class="fa-solid fa-champagne-glasses"></i> Unternehmensveranstaltungen</h2>
+                            <p class="info-txt">Erhöhen Sie Ihre Unternehmensveranstaltung mit unserem Sänger und DJ...</p>
+                        </div>
+                        <div class="service-box">
+                            <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Private Feiern</h2>
+                            <p class="info-txt">Verwandeln Sie jede private Feier in ein unvergessliches Erlebnis...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer id="contact">
+            <h2 class="main-title">Kontakt</h2>
+            <h3 class="subtitle">Bleiben Sie in Kontakt</h3>
+            <div class="main-footer">
+                <div class="content">
+                    <div class="top">
+                        <div class="logo-details">
+                            <i class="fa-solid fa-microphone-lines"></i>
+                            <span class="logo_name">Pero</span>
+                        </div>
+                        <div class="media-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-spotify"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fa-solid fa-music"></i></a>
+                        </div>
+                    </div>
+                    <div class="link-boxes">
+                        <ul class="box">
+                            <li class="link_name">Zusammenarbeit</li>
+                            <li><a href="#">Place.Gmbh</a></li>
+                            <li><a href="#">Production.Gmbh</a></li>
+                            <li><a href="#">Person.Gmbh</a></li>
+                        </ul>
+                        <ul class="box">
+                            <li class="link_name">Dienstleistungen</li>
+                            <li><a href="#">Clubs & Bars</a></li>
+                            <li><a href="#">Hochzeiten</a></li>
+                            <li><a href="#">Co. Veranstaltungen</a></li>
+                            <li><a href="#">Private Feiern</a></li>
+                        </ul>
+                        <ul class="box">
+                            <li class="link_name">Standort</li>
+                            <li><a href="#">Fakest. 202, BE 10090</a></li>
+                            <li>Tel- <a href="#">0123456789</a></li>
+                            <li><a href="#">urboyperomusic@gmail.com</a></li>
+                        </ul>
+                        <ul class="box input-box">
+                            <li class="link_name">Abonnieren</li>
+                            <li><input type="text" placeholder="Geben Sie Ihre E-Mail ein"></li>
+                            <li><input type="button" value="Abonnieren"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom-details">
+                    <div class="bottom_text">
+                        <span class="copyright_text">Erstellt von <a href="#">Stefi C.</a> mit <i class="fa-regular fa-heart"></i></span>
+                        <span class="policy_terms">
+                            <a href="#">Urheberrecht © 2024</a>
+                            <br>
+                            <a href="#">Alle Rechte vorbehalten</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</div>
     
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

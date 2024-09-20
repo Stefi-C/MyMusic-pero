@@ -16,28 +16,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
   });
 
-//navbar
-// scrollNav.js
 
-let lastScrollTop = 0;
-const navbar = document.getElementById("navbar");
 
-function handleScroll() {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop) {
-        // Scroll down - hide the navbar
-        navbar.style.top = "-100px"; // Adjust based on your navbar height
-    } else {
-        // Scroll up - show the navbar
-        navbar.style.top = "0";
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
-}
-
-// Attach the scroll event listener
-window.addEventListener("scroll", handleScroll);
 //---------------------------------------------------------------musicPlayer
 const wrapper = document.querySelector(".wrapper"),
     musicImg = wrapper.querySelector(".img-area img"),
@@ -578,6 +558,19 @@ function startStreaming() {
 
 // Avvia il conto alla rovescia per la prossima data e aggiorna ogni secondo
 setInterval(updateCountdown, 1000);
+
+
+
+
+document.getElementById('englishBtn').addEventListener('click', function() {
+    document.querySelector('.english-version').style.display = 'block';
+    document.querySelector('.german-version').style.display = 'none';
+});
+
+document.getElementById('germanBtn').addEventListener('click', function() {
+    document.querySelector('.english-version').style.display = 'none';
+    document.querySelector('.german-version').style.display = 'block';
+});
   });
 
 
