@@ -872,6 +872,7 @@ nav{
     padding: 30px;
     box-shadow: inset 3px 3px 10px -2px #000000;
     color: var(--blue);
+    margin-bottom: 20px;
 }
 .concert{
     height: 300px;
@@ -953,6 +954,7 @@ nav{
     justify-content: center;
     margin: 20px;
     width: 70%;
+    padding: 10px;
 }
 .adresse{
     flex-direction: column;
@@ -960,6 +962,11 @@ nav{
     justify-content: center;
     align-items: center;
     box-shadow: var(--image-shadow);
+}
+.adresse iframe{
+  margin: 15px;
+  border-radius: 3px;
+  box-shadow: var(--box-shadow);
 }
 
 

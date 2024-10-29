@@ -2,18 +2,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/fireba
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyBRLHh4rhJYtsi6LYHGfcRflheoCU8W1a8",
-    authDomain: "pero-s-website.firebaseapp.com",
-    projectId: "pero-s-website",
-    storageBucket: "pero-s-website.appspot.com",
-    messagingSenderId: "461180613476",
-    appId: "1:461180613476:web:ef616b339462f7f3c78071"
-};
+
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(window.firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
