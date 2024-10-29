@@ -1,26 +1,37 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     //-------------------------------navbarbutton----
 
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    var menuList = document.getElementById('menu-list');
-    var menuToggle = document.getElementById('menu-toggle');
-
-    if (menuList.style.right === '0px') {
-      menuList.style.right = '-400px';
-      menuToggle.classList.remove('fa-times');
-      menuToggle.classList.add('fa-bars');
-    } else {
-      menuList.style.right = '0px';
-      menuToggle.classList.remove('fa-bars');
-      menuToggle.classList.add('fa-times');
-    }
-  });
-
-
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuToggle = document.getElementById('menu-toggle');
+        
+        // Check if the menu-toggle element exists
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                var menuList = document.getElementById('menu-list');
+    
+                // Ensure menuList exists before trying to access its styles
+                if (menuList) {
+                    if (menuList.style.right === '0px') {
+                        menuList.style.right = '-400px';
+                        menuToggle.classList.remove('fa-times');
+                        menuToggle.classList.add('fa-bars');
+                    } else {
+                        menuList.style.right = '0px';
+                        menuToggle.classList.remove('fa-bars');
+                        menuToggle.classList.add('fa-times');
+                    }
+                }
+            });
+        }
+    });
+});
 
 //---------------------------------------------------------------musicPlayer
-const wrapper = document.querySelector(".wrapper"),
-    musicImg = wrapper.querySelector(".img-area img"),
+const wrapper = document.querySelector(".wrapper");
+if(wrapper){
+
+
+   const musicImg = wrapper.querySelector(".img-area img"),
     musicName = wrapper.querySelector(".song-details .name"),
     musicArtist = wrapper.querySelector(".song-details .artist"),
     playPauseBtn = wrapper.querySelector(".play-pause"),
@@ -52,14 +63,19 @@ function playMusic() {
     wrapper.classList.add("paused");
     playPauseBtn.querySelector("i").innerText = "pause";
     mainAudio.play();
-    musicImg.classList.add('rotate');
-}
+    if(musicImg){
+         musicImg.classList.add('rotate');
+        }
+    }
+   
 
 function pauseMusic() {
     wrapper.classList.remove("paused");
     playPauseBtn.querySelector("i").innerText = "play_arrow";
     mainAudio.pause();
+    if(musicImg){
     musicImg.classList.remove('rotate');
+    }
 }
 
 function prevMusic() {
@@ -236,6 +252,7 @@ function clicked(element) {
     playMusic();
     playingSong();
 }
+}
 /*--------------------------------video
 
 var videoPlayer = document.getElementById("videoPlayer"),
@@ -268,7 +285,7 @@ listVideo.forEach(video => {
 */
 
 
-      /*--------------------------------gallery*/
+ /*--------------------------------gallery*/
 
     
        
@@ -299,25 +316,32 @@ listVideo.forEach(video => {
         imageIndex.innerHTML = `0${i+1}`;
         index = i;
       }
-      closeBtn.addEventListener("click", ()=>{
-        popup.classList.toggle('active');
-      })
-      leftArrow.addEventListener("click", ()=>{
-        if(index > 0){
-            updateImage(index - 1);
-        }
-        if(index === 0){
-            index = images.length;
-        }
-      })
-      rightArrow.addEventListener("click", ()=>{
-        if(index < images.length - 1){
-            updateImage(index + 1);
-        }
-        if(index === images.length){
-            index = 0;
-        }
-      })
+
+     if(closeBtn){
+        closeBtn.addEventListener("click", ()=>{
+            popup.classList.toggle('active');
+          })
+     }
+    if(leftArrow){
+        leftArrow.addEventListener("click", ()=>{
+            if(index > 0){
+                updateImage(index - 1);
+            }
+            if(index === 0){
+                index = images.length;
+            }
+          })
+    }
+     if(rightArrow){
+        rightArrow.addEventListener("click", ()=>{
+            if(index < images.length - 1){
+                updateImage(index + 1);
+            }
+            if(index === images.length){
+                index = 0;
+            }
+          })
+     }
      
       //-----------------contact form
       document.addEventListener("DOMContentLoaded", function() {
@@ -488,15 +512,21 @@ let streamingInProgress = false;
 
 // Funzione per aggiornare il countdown del prossimo evento
 function updateCountdown() {
+    const countdownContainer = document.getElementById("countdown");
+    const statusMessage = document.getElementById("status-message");
+
+    // Check if countdown elements are present
+    if (!countdownContainer || !statusMessage) {
+        return; // Exit the function if elements are not found
+    }
+
     if (countdownDates.length === 0) {
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("status-message").innerHTML = "No upcoming streams";
+        countdownContainer.style.display = "none";
+        statusMessage.innerHTML = "No upcoming streams";
         return;
     }
 
     const now = new Date().getTime();
-    const countdownContainer = document.getElementById("countdown");
-    const statusMessage = document.getElementById("status-message");
 
     // Trova la prossima data di streaming
     const nextDate = countdownDates[0]; // Sempre la prima data
@@ -560,19 +590,135 @@ function startStreaming() {
 setInterval(updateCountdown, 1000);
 
 
+//da qui
+//english switch
+/*
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if the English and German buttons exist
+    var englishBtn = document.getElementById('englishBtn');
+    var germanBtn = document.getElementById('germanBtn');
+    var englishVersion = document.querySelector('.english-version');
+    var germanVersion = document.querySelector('.german-version');
 
+    // Only proceed if both buttons are present
+    if (englishBtn || germanBtn) {
+        // Ensure the version elements exist before adding event listeners
+        if (englishVersion && germanVersion) {
+            // Check if the English button exists
+            if (englishBtn) {
+                englishBtn.addEventListener('click', function() {
+                    englishVersion.style.display = 'block';
+                    germanVersion.style.display = 'none';
+                });
+            }
 
-document.getElementById('englishBtn').addEventListener('click', function() {
-    document.querySelector('.english-version').style.display = 'block';
-    document.querySelector('.german-version').style.display = 'none';
+            // Check if the German button exists
+            if (germanBtn) {
+                germanBtn.addEventListener('click', function() {
+                    englishVersion.style.display = 'none';
+                    germanVersion.style.display = 'block';
+                });
+            }
+        }
+    }
+});*/
+document.addEventListener('DOMContentLoaded', function () {
+    const account = document.getElementById('account');
+    const accountChoices = document.getElementById('account-choices');
+    const accountSettings = document.getElementById('account-settings');
+    const signUpOption = document.getElementById('u-1');
+    const loginOption = document.getElementById('u-2');
+
+    // Ensure account choices and settings are hidden by default when the page is refreshed
+    if (accountChoices) accountChoices.style.display = 'none';
+    if (accountSettings) accountSettings.style.display = 'none';
+
+    if (account && accountChoices && accountSettings) {
+        // Check if a user is logged in and update the UI accordingly
+        const loggedInUserId = localStorage.getItem('loggedInUserId');
+
+        if (loggedInUserId) {
+            // User is logged in
+            const userFirstName = localStorage.getItem('userFirstName');
+            account.innerText = userFirstName || 'Account';
+
+            // Toggle account settings on clicking the user's name
+            account.addEventListener('click', function () {
+                accountSettings.style.display = accountSettings.style.display === 'block' ? 'none' : 'block';
+                accountChoices.style.display = 'none';
+            });
+
+            accountSettings.innerHTML = `
+                <li id="profile">Profile</li>
+                <li id="settings">Settings</li>
+                <li id="logout">Logout</li>
+            `;
+
+            const logoutButton = document.getElementById('logout');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function () {
+                    localStorage.removeItem('loggedInUserId');
+                    localStorage.removeItem('userFirstName');
+                    const auth = getAuth();
+                    signOut(auth).then(() => {
+                        window.location.href = 'index.html';
+                    }).catch((error) => {
+                        console.error("Error logging out:", error);
+                    });
+                });
+            }
+        } else {
+            // User is not logged in
+
+            // Toggle account choices on clicking "Account"
+            account.addEventListener('click', function () {
+                accountChoices.style.display = accountChoices.style.display === 'block' ? 'none' : 'block';
+                accountSettings.style.display = 'none';
+            });
+
+            // Handle Sign Up and Log In redirection
+            if (signUpOption) {
+                signUpOption.addEventListener('click', function () {
+                    window.location.href = 'signup.html?mode=signup';
+                });
+            }
+
+            if (loginOption) {
+                loginOption.addEventListener('click', function () {
+                    window.location.href = 'signup.html?mode=login';
+                });
+            }
+        }
+    }
 });
 
-document.getElementById('germanBtn').addEventListener('click', function() {
-    document.querySelector('.english-version').style.display = 'none';
-    document.querySelector('.german-version').style.display = 'block';
+// Toggle between sign-up and sign-in forms
+document.addEventListener('DOMContentLoaded', function () {
+    const signUpContainer = document.getElementById('signup');
+    const signInContainer = document.getElementById('signIn');
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get('mode');
+
+    if (mode === 'signup') {
+        signUpContainer.style.display = 'block';
+        signInContainer.style.display = 'none';
+    } else if (mode === 'login') {
+        signUpContainer.style.display = 'none';
+        signInContainer.style.display = 'block';
+    }
+
+    const signUpButton = document.getElementById('signUpButton');
+    const signInButton = document.getElementById('signInButton');
+
+    if (signUpButton || signInButton) {
+        signUpButton.addEventListener('click', function () {
+            signUpContainer.style.display = 'block';
+            signInContainer.style.display = 'none';
+        });
+
+        signInButton.addEventListener('click', function () {
+            signUpContainer.style.display = 'none';
+            signInContainer.style.display = 'block';
+        });
+    }
 });
-  });
-
-
-
-    

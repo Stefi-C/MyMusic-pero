@@ -91,7 +91,33 @@ nav{
     text-shadow: var(--text-shadow);
 }
 
+.menu{
+  display: flex;
+}
+.signIn{
+  cursor: pointer;
+}
+.signIn p{
+  color: var(--white);
+  margin: 0 20px;
+  width: 50px;
+}
+.signIn ul{
+  display: none;
+  background-color: var(--white);
+  color: var(--blue);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px #222;
+}
+.signIn ul li{
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 3px;
 
+}
+.signIn ul li:hover{
+  background-color: var(--yellow);
+}
 .bars-menu-btn{
     display: none;
 }
@@ -124,11 +150,13 @@ nav{
     width: 100%;
 }
 
+#account-choices, #account-settings {
+  display: none; /* Hide by default */
+}
 
 
 
-
-#banner{
+#banner, #german-banner{
     display: block;
     height: 94vh;
     background: linear-gradient(90deg, rgba(246,249,111,0.5) 0%, rgba(2, 14, 85, 0.526) 40%, rgba(198, 36, 144, 0.534) 100%),
@@ -188,7 +216,7 @@ nav{
 
 
 
-#discografy{
+#discografy, #german-discografy{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
@@ -439,10 +467,10 @@ nav{
     background-color: var(--white);
   }
   */
-  .controls #prev{
+  .controls #prev, .controls #german-prev{
     margin-top: -10px;
   }
-  .controls #next{
+  .controls #next, .controls #german-next{
     margin-top: -10px;
   }
   .c2{
@@ -534,7 +562,7 @@ nav{
     height: 500px;
     box-sizing: border-box;
 }
-#ul-tag{
+#ul-tag, #german-ul-tag{
     overflow: scroll;
     height: 400px;
 }
@@ -564,7 +592,7 @@ nav{
  .row i{
     cursor: default;
   }
-  #ul-tag{
+  #ul-tag, #german-ul-tag{
     position: relative;
   }
   .download-btn{
@@ -665,7 +693,7 @@ nav{
 
 
 
-#gallery{
+#gallery, #german-gallery{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
@@ -827,7 +855,7 @@ nav{
 }
 
 
-#upcoming{
+#upcoming, #german-upcoming{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
@@ -953,13 +981,13 @@ nav{
   position: relative;
 }
 
-#countdown {
+#countdown, #german-countdown{
   font-size: 3em;
   margin-top: 20px;
   text-align: center;
 }
 
-#streaming-iframe {
+#streaming-iframe, #german-streaming-iframe {
   display: none; /* Start hidden */
   width: 80%; /* Adjust as needed */
   height: 60vh; /* Maintain aspect ratio and viewport height */
@@ -970,12 +998,12 @@ nav{
   transform: translate(-50%, -50%);
 }
 
-#countdown, #main-title, #subtitle, #end-message {
+#countdown, #main-title, #subtitle, #german-end-message,#german-countdown, #german-main-title, #german-subtitle, #end-message  {
   display: block;
   text-align: center;
 }
 
-#container {
+#container, #german-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -987,11 +1015,11 @@ nav{
   text-align: center;
 }
 
-#container h1 {
+#container h1, #german-container h1 {
   font-size: 30px;
 }
 
-#end-message {
+#end-message, #german-end-message {
   display: none;
   font-size: 20px;
   font-weight: bold;
@@ -999,7 +1027,7 @@ nav{
 }
 
 
-#videos{
+#videos, #german-videos{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
@@ -1099,7 +1127,7 @@ video:focus{
 
 
 
-#services{
+#services, #german-services{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
@@ -1299,7 +1327,7 @@ input:active{
 
 
 
-#bio{
+#bio, #german-bio{
     padding: 40px 30px 10px 30px;
     background: linear-gradient(90deg, rgba(246,249,111,0.5)0%, rgba(2,15,85,1) 40%, rgba(198,36,143,1) 100%);
     text-align: center;
@@ -1329,7 +1357,7 @@ input:active{
 .book{
     display: flex;
 }
-#cover{
+#cover, #german-cover{
     width: 350px;
     height: 500px;
     box-shadow: 8px 4px 34px 5px #000000;
@@ -1338,7 +1366,7 @@ input:active{
     font-family: var(--josefine);
     border-radius: 5px;
 }
-#cover h2{
+#cover h2, #german-cover h2{
     font-size: 45px;
     width: 345px;
     margin: 10px;
@@ -1441,24 +1469,24 @@ input:active{
 .end-btn:hover{
     background: #949494;
 }
-#p1{
+#p1, #german-p1{
     z-index: 3;
 }
-#p2{
+#p2, #german-p2{
     z-index: 2;
 }
-#p3{
+#p3, #german-p3{
     z-index: 1;
 }
-#c1:checked ~ .flip-book #p1{
+#c1:checked ~ .flip-book #p1, #german-c1:checked ~ .flip-book #german-p1{
     transform: rotateY(-180deg);
     z-index: 1;
 }
-#c2:checked ~ .flip-book #p2{
+#c2:checked ~ .flip-book #p2, #german-c2:checked ~ .flip-book #german-p2{
     transform: rotateY(-180deg);
     z-index: 2;
 }
-#c3:checked ~ .flip-book #p3{
+#c3:checked ~ .flip-book #p3, #german-c3:checked ~ .flip-book #german-p3{
     transform: rotateY(-180deg);
     z-index: 3;
 }
@@ -1648,7 +1676,7 @@ footer{
         background: transparent;
    }
   
-   #menu-toggle{
+   #menu-toggle, #german-menu-toggle{
     position: fixed;
     cursor: pointer;
     right:  5%;
@@ -1694,7 +1722,7 @@ footer{
     .menu-list li a:hover::after{
         width: 100%;
     }
-    #banner{
+    #banner, #german-banner{
         position: relative;
     }
     .title{
@@ -1723,11 +1751,11 @@ footer{
     .music-list{
         height: 100%;
     }
-    #ul-tag{
+    #ul-tag, #german-ul-tag{
         height: 80%;
         
     }
-    #ul-tag li img{
+    #ul-tag li img, #german-ul-tag li img{
       margin-right: 5px;
     }
     .wrapper{
@@ -1793,7 +1821,7 @@ footer{
       .vid video{
         width: 80px;
       }*/
-      #services{
+      #services, #german-services{
         height: 100vh;
     }
     .services{
@@ -1887,7 +1915,7 @@ footer{
       background: transparent;
       width: 90%;
     }
-    #banner{
+    #banner, #german-banner{
       background: linear-gradient(90deg, rgba(246,249,111,0.5) 0%, rgba(2, 14, 85, 0.526) 40%, rgba(198, 36, 144, 0.534) 100%),
       url(./banner-bg-2.jpg);
       background-size: cover;
