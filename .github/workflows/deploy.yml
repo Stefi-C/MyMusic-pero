@@ -30,7 +30,7 @@ jobs:
           FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
         run: |
-          echo "window.firebaseConfig = {
+          mkdir -p build && echo "window.firebaseConfig = {
             apiKey: '${FIREBASE_API_KEY}',
             authDomain: '${FIREBASE_AUTH_DOMAIN}',
             projectId: '${FIREBASE_PROJECT_ID}',
