@@ -1,0 +1,10 @@
+{
+  "name": "my-music-pero",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "firebase": "^10.11.1"
+  }
+}

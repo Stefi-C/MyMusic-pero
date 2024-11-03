@@ -13,11 +13,17 @@
         
 
    <script src="https://kit.fontawesome.com/36ca5abeae.js" crossorigin="anonymous"></script>
+   
 </head>
 <body>
-   
+  
+    <!--<div class="language-switcher">
+        <button id="englishBtn">En</button>
+        <button id="germanBtn">De</button>
+    </div>-->
+ <div class="english-version" style="display: block;">
     <section id="banner">
-        <nav>
+        <nav id="navbar">
             <div class="logo">
                 <h1>MyMusic</h1>
             </div>
@@ -27,14 +33,30 @@
                     <li class="hideOnMobile"><a href="#banner">Home</a></li>
                     <li class="hideOnMobile"><a href="#discografy">Discografy</a></li>
                     <li class="hideOnMobile"><a href="#upcoming">Upcoming Gigs</a></li>
-                    <!--<li class="hideOnMobile"><a href="#videos">Videos</a></li>-->
+                    <li class="hideOnMobile"><a href="#videos">Videos</a></li>
                     <li class="hideOnMobile"><a href="#gallery">Gallery</a></li>
                     <li class="hideOnMobile"><a href="#bio">Bio</a></li>
                     <li class="hideOnMobile"><a href="#services">Services</a></li>
                     <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+                    <li>
+                        <div class="hideOnMobile signIn">
+                            <p id="account">Account</p>
+                            <ul id="account-choices" style="display: none;">
+                                <li id="u-1">Sign Up</li>
+                                <li id="u-2">Log In</li>
+                            </ul>
+                            <ul id="account-settings" style="display: none;">
+                                <li id="profile"><a href="#">Profile</a></li>
+                                <li id="settings"><a href="#">Settings</a></li>
+                                <li id="logout">Log out</li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
+                
                
             </div>
+          
             <i id="menu-toggle" class="fa-solid fa-bars"></i>
     
         </nav>
@@ -132,7 +154,6 @@
         </div>
         <div class="main-concert">
             <div class="concert">
-                <img src="./concert1.avif" alt="">
                 <div class="concert-details">
                     <h2>May. 1, 2024</h2>
                     <p>Berlin, Be</p>
@@ -140,6 +161,9 @@
                     <div class="concert-btn">
                         <button>Tickets</button>
                     </div>
+                </div>
+                <div class="concert-img">
+                    <img src="./upcoming-img.jpg" alt="">
                 </div>
             </div>
             <div class="concert-desc">
@@ -155,6 +179,19 @@
                 </div>
             </div>
         </div>
+        <div class="upcoming-stream">
+            <div class="countdown-container" id="container">
+              <h1>Gigs Streaming in...:</h1>
+              <div id="countdown"></div>
+              <div id="status-message"></div>
+            </div>
+            
+            <!-- Iframe for streaming -->
+            <iframe id="streaming-iframe" width="560" height="315" 
+              style="display:none;" 
+              src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+          </div>
     </section>
     <!--<section id="videos">
         <h2 class="main-title">Oficial Clips</h2>
@@ -360,7 +397,7 @@
     <div class="services-content">
         <div class="contact-form">
             <div class="form">
-                <form action="mail.php" method="post">
+                <form action="" method="post">
 
                      <h2>Booking Here</h2>
                     <input class="form-label item" type="text" id="fname" name="name" required placeholder="Name"  autocomplete="off">
@@ -467,9 +504,9 @@
                 <div class="bottom_text">
                   <span class="copyright_text">Made by <a href="#">Stefi C.</a> with <i class="fa-regular fa-heart"></i></span>
                   <span class="policy_terms">
-                    <a href="#">Copyright © 2024</a>
-                    <br>
-                    <a href="#">All rights reserved</a>
+                    <a href="#">Copyright © 2024 | All rights reserved</a>
+                    
+                    <a href="terms&conditions.html">Terms & Conditions</a>
                   </span>
                 </div>
               </div>
@@ -477,11 +514,268 @@
         
     </footer>
     
+ </div>
+
+
+
+ <!--<div class="german-version" style="display: none;">
+   
+    <section id="german-banner">
+        <nav id="german-navbar">
+            <div class="logo">
+                <h1>MyMusic</h1>
+            </div>
+            <div class="menu">
+                <ul id="german-menu-list" class="menu-list">
+                    <li class="hideOnMobile"><a href="#german-banner">Home</a></li>
+                    <li class="hideOnMobile"><a href="#german-discografy">Discografie</a></li>
+                    <li class="hideOnMobile"><a href="#german-upcoming">Kommende Auftritte</a></li>
+                    <li class="hideOnMobile"><a href="#german-gallery">Galerie</a></li>
+                    <li class="hideOnMobile"><a href="#german-bio">Biografie</a></li>
+                    <li class="hideOnMobile"><a href="#german-services">Dienstleistungen</a></li>
+                    <li class="hideOnMobile"><a href="#german-contact">Kontakt</a></li>
+                </ul>
+            </div>
+           
+            <i id="german-menu-toggle" class="fa-solid fa-bars"></i>
+        </nav>
+        <div class="title">
+            <h1>PeRo</h1>
+            <p>Geboren im lebhaften kulturellen Gefüge Nigerias, ist Peter Fabian, bekannt als Pero, ein dynamischer und gefühlvoller Afrobeat-Künstler und Songwriter, der mit einer einzigartigen Mischung aus rhythmischem Geschichtenerzählen und mitreißenden Melodien das Publikum begeistert.</p>
+        </div>
+    </section>
     
+    <section id="german-discografy">
+        <h2 class="main-title">Discografie</h2>
+        <div class="play-list">
+            <h3 class="subtitle">Musikliste</h3>
+        </div>
+        <div class="main-musicplayer">
+            <div class="tracks">
+                <div class="music-list">
+                    <div class="header">
+                        <div class="row">
+                            <span>MyMusic</span>
+                        </div>
+                    </div>
+                    <ul id="german-ul-tag">
+                        <div>
+                            <ul id="german-root"></ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-player">
+                <div class="wrapper">
+                    <div class="m-top-bar">
+                        <span>Jetzt Spielen</span>
+                    </div>
+                    <div class="music-bar">
+                        <div class="img-area">
+                            <img src="" alt="">
+                        </div>
+                        <div class="song-details">
+                            <p class="name"></p>
+                            <p class="artist"></p>
+                        </div>
+                        <div class="progress-area">
+                            <div class="progress-bar">
+                                <audio id="german-main-audio" src=""></audio>
+                            </div>
+                            <div class="song-timer">
+                                <span class="current-time">0:00</span>
+                                <span class="max-duration">0:00</span>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <i id="german-repeat-plist" class="material-icons c1" title="wiederholen">repeat</i>
+                            <div class="c2">
+                                <i id="german-prev" class="material-icons ">skip_previous</i>
+                            </div>
+                            <div class="play-pause">
+                                <i class="material-icons play">play_arrow</i>
+                            </div>
+                            <div class="c2">
+                                <i id="german-next" class="material-icons">skip_next</i>
+                            </div>
+                            <i id="german-shuffle-music" class="material-icons c1" title="mischen">shuffle</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="german-upcoming">
+        <h2 class="main-title">Kommende</h2>
+        <div class="coming-soon">
+            <h3 class="subtitle">Nächste Auftritte</h3>
+        </div>
+        <div class="main-concert">
+            <div class="concert">
+                <div class="concert-details">
+                    <h2>1. Mai 2024</h2>
+                    <p>Berlin, Be</p>
+                    <p>Urania</p>
+                    <div class="concert-btn">
+                        <button>Tickets</button>
+                    </div>
+                </div>
+                <div class="concert-img">
+                    <img src="./upcoming-img.jpg" alt="">
+                </div>
+            </div>
+            <div class="concert-desc">
+                <h2>Titel der Veranstaltung</h2>
+                <div class="c-desc">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+                    <div class="adresse">
+                        <p>Someadressestraße 1 <br> 10020, Berlin</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=..." width="150" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="upcoming-stream">
+            <div class="countdown-container" id="german-container">
+                <h1>Streaming in...:</h1>
+                <div id="german-countdown"></div>
+                <div id="german-status-message"></div>
+            </div>
+            <iframe id="german-streaming-iframe" width="560" height="315" style="display:none;" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="german-gallery">
+        <h2 class="main-title">Galerie</h2>
+        <div class="coming-soon">
+            <h3 class="subtitle">Meine Fotos... Meine Videos</h3>
+        </div>
+        <div class="main-gallery">
+            <div class="cover-gallery"></div>
+            <div class="gallery"> 
+                <div class="gallery-image"><img src="./gallery-img1.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img2.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img3.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img4.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img5.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img6.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img7.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img8.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img9.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img10.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img11.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img12.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img13.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img14.jpg" class="image"></div>
+                <div class="gallery-image"><img src="./gallery-img15.jpg" class="image"></div>
+                <div class="popup">
+                    <div class="top-bar">
+                        <p class="image-name">img1.png</p>
+                        <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+                    </div>
+                    <div class="arrow-btn left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+                    <div class="arrow-btn right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <img src="" class="large-image">
+                    <h1 class="index">01</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="german-bio">
+        <h2 class="main-title">Biografie</h2>
+        <h3 class="subtitle">Über mich</h3>
+        <div class="main-book">
+            <div class="book">
+                <input class="book-command" type="checkbox" id="german-c1">
+                <input class="book-command" type="checkbox" id="german-c2">
+                <input class="book-command" type="checkbox" id="german-c3">
+                <div id="german-cover">
+                    <h2>Ich, meine Erfahrungen und Ziele</h2>
+                </div>
+                <div class="flip-book"> 
+                    <div class="flip" id="german-p1">
+                        <div class="back">
+                            <img src="./bio-path.jpeg" class="book-img">
+                            <label for="c1" class="back-btn">Back</label>
+                        </div>
+                        <div class="front">
+                            <h2>Who Am I</h2>
+                            <p class="bio-p">I am Pero, a dynamic and soulful Afrobeat artist hailing from Nigeria, blending rhythmic storytelling with infectious melodies. Born Peter Fabian in Imo State, I was immersed in Nigeria's rich musical heritage from a young age. As a singer, songwriter, and performer, I strive to capture the vibrant spirit of Afrobeat, creating music that resonates with and captivates audiences worldwide. My goal is to share the joy and energy of Afrobeat, bringing people together through the power of music.</p>
+                            <label for="c1" class="next-btn">Next</label>
+                        </div>
+                    </div>
+                    <div class="flip" id="german-p2">
+                        <div class="back">
+                            <img src="./bio-mydream.jpeg" class="book-img">
+                            <label for="c2" class="back-btn">Back</label>
+                        </div>
+                        <div class="front">
+                            <h2>My Path</h2>
+                            <p class="bio-p">My musical journey began in Nigeria, where I was deeply influenced by the sounds of Afrobeat that surrounded me. Growing up in this culturally rich environment, I developed a passion for music early on. Relocating to Germany allowed me to blend traditional African rhythms with contemporary influences, crafting a unique style that resonates with a global audience. This fusion of sounds has been key to my artistic evolution, helping me connect with diverse listeners and earn international recognition. My path has been one of continuous growth, driven by a love for music and a desire to innovate.
+                            </p>
+                     <label for="c2" class="next-btn">Next</label>
+                        </div>
+                    </div>
+                    <div class="flip" id="german-p3">
+                        <div class="back">
+                            <img src="./bio-aboutme.jpeg" class="book-img">
+                            <label for="c3" class="back-btn">Back</label>
+                        </div>
+                        <div class="front">
+                            <h2>My Aspiration</h2>
+                            <p class="bio-p">I aspire to push the boundaries of Afrobeat, innovating while staying true to its roots. My goal is to elevate African music on the global stage, fostering a deeper appreciation for its cultural richness. Through my art, I aim to inspire and unite people from diverse backgrounds, promoting a message of joy, unity, and cultural pride. I dream of leaving a lasting impact on the world of music, creating a legacy that honors the traditions of Afrobeat while also pushing it forward into new and exciting directions.
+                            </p>
+                     <label for="c3" class="next-btn">Next</label>
+                        </div>
+                    </div>
+                    <div class="front end-page">
+                        <h2>My Gratitude</h2>
+                        <p class="bio-p"> I am deeply grateful for the unwavering support and love from my family, friends, and fans who have believed in my music from the very beginning. Their encouragement has been the fuel for my passion and creativity. I also hold immense appreciation for the rich cultural heritage of Nigeria and the opportunities I've found in Germany, both of which have profoundly shaped my artistic journey. Thank you for being an integral part of my musical adventure. Your belief in me drives my ambition to create and share the vibrant spirit of Afrobeat with the world. </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="german-services">
+        <h2 class="main-title">Dienstleistungen</h2>
+        <h3 class="subtitle">Meine Dienstleistungen</h3>
+        <div class="main-services">
+            <div class="service-card">
+                <div class="service-desc">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                    <button>Details</button>
+                </div>
+                <div class="service-img">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="german-contact">
+        <h2 class="main-title">Kontakt</h2>
+        <h3 class="subtitle">Senden Sie eine Nachricht</h3>
+        <div class="main-contact">
+            <form action="https://submit-form.com/YOUR_FORM_ID">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+                <button type="submit">Absenden</button>
+            </form>
+        </div>
+    </section>
+    
+</div>-->
+    <script src="firebaseConfig.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/music-list.js"></script>
     <script src="/script.js"></script>
+    <script type="module" src="./homepage.js"></script>
     
 
     
